@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
+app.run(debug=True)
 
 
 @app.route('/')
