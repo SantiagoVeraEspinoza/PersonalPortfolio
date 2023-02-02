@@ -4,10 +4,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
-app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="Vitrina", url=os.getenv("URL"))
-
+    return render_template('index.html', title="Vitrina", project_1="Team Portfolio Site", languages="Flask, JS, AWS",
+                           date_1="Jan 26/2023 - Feb 06/2023", url=os.getenv("URL"))

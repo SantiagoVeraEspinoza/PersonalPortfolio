@@ -95,3 +95,66 @@ body {
     font-size: 50px;
     font-weight: 700;
 }
+
+/* Start of Custom CSS Styles */
+/* 1 em = 16px */
+
+/* Team Projects CSS */
+
+/* Div - Section_Header */
+.section-header h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+}
+
+
+/* Div Projects */
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    text-align: inner;
+    align-items: baseline;
+}
+
+.projects {
+    width: 65%;
+    margin: auto;
+}
+
+.projects h2 {
+    margin: 0;
+}
+
+
+.project-header h1 {
+    margin-bottom: 0;
+}
+
+.project-name {
+    font-size: 28px;
+}
+
+.project-date {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.project-languages {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+ul {
+    margin: 0;
+}
+
+.projects li {
+    font-size: 20px;
+}
+
+.site-link {
+    list-style: none;
+}
+
