@@ -31,14 +31,63 @@
     </header>
 
     <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
-        </div>
-        <h1>{{ title }}</h1>
-        <p>Xavier - Hello World!</p>
-        <p>Santiago - Hello World!</p>
-        <p>Raven - Hello World!</p>
-        <p>Cindy - Hello World!</p>
+        <style>
+            .table-top {
+                margin: 0 auto;
+            }
+        </style>
+        <table class="table-top">
+            <tr>
+                <style>
+                    .img1 {
+                        border-radius: 50%;
+                        width: 200px;
+                        height: 200px;
+                        table-layout: fixed;
+                        transition: transform 0.2s ease-in-out;
+                    }
+                    .img1:hover {
+                        transform: scale(1.1);
+                    }
+                </style>
+                
+
+                <th>
+                    <img class="img1" src="./static/img/XavierPP.png">
+                </th>
+                <th>
+                    <img class="img1" src="./static/img/SantiagoPP.png">
+                </th>
+                <th>
+                    <img class="img1" src="./static/img/RavenPP.png">
+                </th>
+                <th>
+                    <img class="img1" src="./static/img/CindyPP.png">
+                </th>
+            </tr>
+            <tr>
+                <style>
+                    .titles {
+                        font-size: 24px;
+                        display: inline-block;
+                        color: white;
+                        text-align: center;
+                    }
+                </style>
+                <td>
+                    <p class="titles">Xavier</p>
+                </td>
+                <td>
+                    <p class="titles">Santiago</p>
+                </td>
+                <td>
+                    <p class="titles">Raven</p>
+                </td>
+                <td>
+                    <p class="titles">Cindy</p>
+                </td>
+            </tr>
+        </table>
     </div>
 
 </body>
