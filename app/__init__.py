@@ -9,6 +9,5 @@ app.run(debug=True)
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
+    return render_template('index.html', title="Vitrina", url=os.getenv("URL"))
 
- 
