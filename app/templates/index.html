@@ -30,64 +30,29 @@
         </div>
     </header>
 
-    <div class="profile">
-        <style>
-            .table-top {
-                margin: 0 auto;
-            }
-        </style>
-        <table class="table-top">
-            <tr>
-                <style>
-                    .img1 {
-                        border-radius: 50%;
-                        width: 200px;
-                        height: 200px;
-                        table-layout: fixed;
-                        transition: transform 0.2s ease-in-out;
-                    }
-                    .img1:hover {
-                        transform: scale(1.1);
-                    }
-                </style>
-                
 
-                <th>
-                    <img class="img1" src="./static/img/XavierPP.png">
-                </th>
-                <th>
-                    <img class="img1" src="./static/img/SantiagoPP.png">
-                </th>
-                <th>
-                    <img class="img1" src="./static/img/RavenPP.png">
-                </th>
-                <th>
-                    <img class="img1" src="./static/img/CindyPP.png">
-                </th>
-            </tr>
-            <tr>
-                <style>
-                    .titles {
-                        font-size: 24px;
-                        display: inline-block;
-                        color: white;
-                        text-align: center;
-                    }
-                </style>
-                <td>
-                    <p class="titles">Xavier</p>
-                </td>
-                <td>
-                    <p class="titles">Santiago</p>
-                </td>
-                <td>
-                    <p class="titles">Raven</p>
-                </td>
-                <td>
-                    <p class="titles">Cindy</p>
-                </td>
-            </tr>
-        </table>
+    <div class="profile">
+        <div class="space-container">
+            <div id="profile-picture" class="profile-picture">
+                <a href="{{ url_for('workexp') }}"><img src="./static/img/XavierPP.png">
+                    <h1>Xavier</h1></a>
+            </div>
+    
+            <div id="profile-picture" class="profile-picture">
+                <img src="./static/img/SantiagoPP.png">
+                <h1>Santiago</h1>
+            </div>
+    
+            <div id="profile-picture" class="profile-picture">
+                <img src="./static/img/RavenPP.png">
+                <h1>Raven</h1>
+            </div>
+    
+            <div id="profile-picture" class="profile-picture">
+                <img src="./static/img/CindyPP.png">
+                <h1>Cindy</h1>
+            </div>
+        </div>
     </div>
 
     <div class="section-header">
@@ -104,10 +69,11 @@
             <li>Created a Portfolio Website as a team of 4, using Flask for the backend</li>
             <li>Project was developed in an agile style, with members completing tasks using github issues</li>
             <li>Project was deployed on AWS</li>
-            <li class="site-link"><b>Site:</b><a href=""></a></li>
-            <li class="site-link"><b>Github:</b><a href=""></a></li>
+            <li class="site-link"><b>Site: {{ site_url }}</b><a href=""></a></li>
+            <li class="site-link"><b>Github:</b><a href="{{ github_link }}">{{ github_link }}</a></li>
         </ul>
     </div>
+    
 
 </body>
 </html>
