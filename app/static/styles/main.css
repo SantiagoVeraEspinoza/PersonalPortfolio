@@ -56,10 +56,21 @@ body {
     margin-bottom: 50px;
 }
 
+.profile-picture a {
+    text-decoration: none; /* removes the underline from link-clicks */
+}
+
 .profile h1 {
-        font-size: 50px;
+        font-size: 30px;
         font-weight: 700;
         color: white;
+}
+
+.space-container {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
 }
 
 .profile img {
@@ -70,6 +81,11 @@ body {
         margin-right: auto;
         display: block;        
         padding: 20px;
+        transition: transform 0.2s ease-in-out;
+}
+
+.profile img:hover {
+    transform: scale(1.1);
 }
 
 .profile .profile-picture {
@@ -119,7 +135,7 @@ body {
 }
 
 .projects {
-    width: 65%;
+    width: 70%;
     margin: auto;
 }
 
@@ -158,3 +174,35 @@ ul {
     list-style: none;
 }
 
+
+
+/* CSS Styles for the Individual Page Nav-Bars */
+.section-nav-bar ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.section-nav-bar a {
+    text-decoration: none; /* removes the underline */
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.section-nav-bar a:hover {
+    background-color: #e2a120;
+    color: white;
+    border-radius: 5%;
+    padding: 2px;
+    border: 2px;
+}
+
+.section-nav-bar .focus-link { 
+    color: #2672E3;
+    font-weight: 800;
+}
+
+.company-span {
+    text-decoration: underline;
+}
