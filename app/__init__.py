@@ -21,3 +21,11 @@ def index():
 def workexp():
     return render_template('work.html', title="Xavier's Profile",name="Xavier",company_name="MLH Fellowship", role="Site Reliability Engineer Fellow",
                            work_length="Jan 30/2023 - April 30/2023", url=os.getenv("URL"))
+
+
+"Cindy About Me"
+@app.route('/cindy-aboutme')
+def aboutme():
+    return render_template('about.html', title="Cindy's Profile",name ="Cindy",contact_info="cindyliang0127@gmail.com", about_me="Hello! My name is Cindy Liang and I am currently a junior studying at NYU [insert more information] If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.",pic_url="./static/img/CindyPP.png",url=os.getenv("URL"))
+
+
