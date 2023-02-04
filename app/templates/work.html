@@ -31,7 +31,7 @@
     <div class="profile">
         <div class="space-container">
             <div id="profile-picture" class="profile-picture">
-                <img src="./static/img/XavierPP.png">
+                <img src="{{pic_url}}">
                 <h1>{{ name }}</h1>
             </div>
         </div>
@@ -39,25 +39,35 @@
 
     <div class="section-nav-bar">
        <ul>
-        <li><a href="">About Yourself</a></li>
-        <li><a href="" class="focus-link">Work Experience</a></li>
-        <li><a href="">Education</a></li>
-        <li><a href="">Hobbies</a></li>
-        <li><a href="">Places Visited</a></li>
+        <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
+        <li><a href="{{ url_for(work_route) }}" class="focus-link">Work Experience</a></li>
+        <li><a href="{{ url_for(education_route) }}">Education</a></li>
+        <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
+        <li><a href="{{ url_for(places_route) }}">Places Visited</a></li>
        </ul> 
     </div>
 
+{%for i in range(career["jobcount"])%}
     <div class="projects project1">
         <div class="project-header">
-            <h1 class="project-name"><span class="company-span">{{ company_name }}</span> - {{ role }}</h1>
-            <h1 class="project-date">{{ work_length }}</h1>
+            <h1 class="project-name"><span class="company-span">{{ career["companies"][i] }}</span> - {{ career["jobtitle"][i] }}</h1>
+            <h1 class="project-date">{{ career["dates"][i] }}</h1>
         </div>
         <ul>
-            <li>Worked in a cohort of 20 members</li>
-            <li>Doing multiple SRE Projects</li>
+            {%for k in range(career["descriptions"][i]|length)%}
+            <li> {{ career["descriptions"][i][k] }} </li>
+            {%endfor%} 
         </ul>
     </div>
-</div>
+{%endfor%} 
+
+    
+<!-- 
+{%for i in range(career["jobcount"])%}
+<li> {{career["companies"][i]}} </li>
+{%endfor%} -->
+
+
 
 </body>
 </html>

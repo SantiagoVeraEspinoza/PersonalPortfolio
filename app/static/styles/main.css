@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
     font-family: "Roboto", serif;
     margin: 0px;
+    margin-bottom: 2%;
 }
 
 .nav-bar {
@@ -174,6 +175,11 @@ ul {
     list-style: none;
 }
 
+/* CSS Styles for abotme */
+.aboutme p {
+    font-size: 20px;
+}
+
 
 
 /* CSS Styles for the Individual Page Nav-Bars */
@@ -206,3 +212,28 @@ ul {
 .company-span {
     text-decoration: underline;
 }
+
+/* Map Style */
+.map-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: auto;
+}
+
+.map {
+    margin-top: 30px;
+}
+
+.visit-list li{
+    font-size: 20px;
+}
+
+.home {
+    margin-bottom: 10px;
+}
+
+.reason{
+    list-style-type: none;
+}
+

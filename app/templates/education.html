@@ -43,23 +43,13 @@
 
     <div class="section-nav-bar">
       <ul>
-        <li><a href="{{ url_for(about_route) }}" class="focus-link">About Yourself</a></li>
+        <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
         <li><a href="{{ url_for(work_route) }}">Work Experience</a></li>
-        <li><a href="{{ url_for(education_route) }}">Education</a></li>
+        <li><a href="{{ url_for(education_route) }}" class="focus-link">Education</a></li>
         <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
         <li><a href="{{ url_for(places_route) }}">Places Visited</a></li>
       </ul>
     </div>
 
-    <div class="projects project1 aboutme">
-      <div>
-        <h1 class="project-name">So, who am I?</h1>
-        <p>{{about_me}}</p>
-      </div>
-      <div>
-        <h1 class="project-name">Contact Me:</h1>
-        <p>{{contact_info}}</p>
-      </div>
-    </div>
   </body>
 </html>

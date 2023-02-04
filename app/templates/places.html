@@ -19,6 +19,12 @@
 
     <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
     <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
+
+    <!-- Inserting LeafLet Library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="">
+
     <title>{{ title }}</title>
   </head>
   <body>
@@ -43,23 +49,45 @@
 
     <div class="section-nav-bar">
       <ul>
-        <li><a href="{{ url_for(about_route) }}" class="focus-link">About Yourself</a></li>
+        <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
         <li><a href="{{ url_for(work_route) }}">Work Experience</a></li>
         <li><a href="{{ url_for(education_route) }}">Education</a></li>
         <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
-        <li><a href="{{ url_for(places_route) }}">Places Visited</a></li>
+        <li><a href="{{ url_for(places_route) }}" class="focus-link">Places Visited</a></li>
       </ul>
     </div>
 
-    <div class="projects project1 aboutme">
-      <div>
-        <h1 class="project-name">So, who am I?</h1>
-        <p>{{about_me}}</p>
-      </div>
-      <div>
-        <h1 class="project-name">Contact Me:</h1>
-        <p>{{contact_info}}</p>
+    <!-- Start of Leaflet Map -->
+
+    <div class="map-container">
+      <div id="map" class="map" style="width: 600px; height: 400px;"></div>
+      <div class="visit-list">
+        <h1>Some Interesting Places I've been to!</h1>
+        <ul>
+          <li class="home">Home: </li>
+
+          <li>Country : State : City</li>
+          <li class="reason">So I was</li>
+        </ul>
       </div>
     </div>
+
+
+    <!-- Leaflet JS File -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+     crossorigin=""></script>
+     <script>
+       var map = L.map('map').setView([50.84673, 4.35247], 12);
+       L.tileLayer('https://tile.openstreetmap.be/osmbe/{z}/{x}/{y}.png', {
+        attribution:
+         '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
+         ', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
+           maxZoom: 18
+        }).addTo(map);
+
+        var marker = L.marker([50.84673, 4.35247]).addTo(map);
+        var popup = marker.bindPopup('<b>Hello world!</b><br />I am a popup.');
+     </script>
   </body>
 </html>

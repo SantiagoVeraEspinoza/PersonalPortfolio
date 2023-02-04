@@ -1,9 +1,11 @@
-import os
-from flask import Flask, render_template, request
 from dotenv import load_dotenv
+from flask import Flask, render_template, request
+import os
+
 
 load_dotenv()
 app = Flask(__name__)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
@@ -11,21 +13,139 @@ if __name__ == "__main__":
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="Vitrina", project_1="Team Portfolio Site", github_link= "https://github.com/MLH-Fellowship/project-vitrina",languages="Flask, JS, AWS",
+    return render_template('index.html', title="Vitrina", project_1="Team Portfolio Site", github_link="https://github.com/MLH-Fellowship/project-vitrina", languages="Flask, JS, AWS",
                            date_1="Jan 26/2023 - Feb 06/2023", url=os.getenv("URL"))
+
+
+""" Route names post-fix """
+# -aboutme
+# -work
+# -education
+# -hobbies
+# -places
+
+""" Section fillouts """
+xavier_about = {
+    "contact": "xavierjmoreno401@gmail.com",
+    "aboutme": "I'm a Computer Engineering student who's very passionate about Robotics and AI both in a personal and professional avenue. As a result I'm starting to look deeper into topics like Machine Learning, Autonomous Vehicles and Humanoid Robotics. Currently I'm starting to focus on growing my skills in C++, Python, Operating Systems and Data Structures and Algorithms. I have a background in IT, which led to me gaining interest in Cloud Computing as well. On my personal interests, I absolutely love hackathons, they are great way to meet others and to explore new topics and push boundaries. As a result of them, I've started to become interested in joining both Kaggle Competitions and Robotics Tournaments."
+}
+
+xavier_career = {
+    "jobcount": 4,
+    "companies": ["MLH Fellowship", "Southwest Airlines", "Fujitsu",  "Self-Employed"],
+    "jobtitle": ["Site Reliability Engineer Fellow",  "Noc Analyst", "Service Desk Analyst",  "Private Tutor"],
+    "dates": ["Jan 2023 - April 2023", "Nov 2022 - Present", "March 2021 - Nov 2021", "Nov 2019 - Present"],
+    "descriptions": {
+        0: ["Worked in a cohort of 20 other members"],
+        1: ["Performed continuous monitoring & incident response of various systems through Grafana, escalating tickets when required using ServiceNow. Coordinated with various teams from departments on incidents",
+            "Continuously updated & monitored 250 RHEL 7 machines and 500 Windows 10 machines",
+            "Performed hardware and software upgrades for machines running AVTEC software"],
+        2: ["Citrix-Systems used to virtualize workstation PC with tools such as Wireshark, Teamviewer & AWS voice",
+            "Collaborated in a team addressing 10-20 tickets daily & advising up to 20 clients daily",
+            "SOTI mobicontrol & TeamViewer - Remoted into Windows PCs dealing with malware cleanup, software installation, password-resets, network-connectivity. Used ServiceNow for ticketing",
+            "Handled Zebra device issues, involving incorrect network configurations with IP or staging",
+            "Working with networking hardware ( Cisco Switches & Routers ) to address issues with DHCP / DNS / IP"],
+        3: ["Tutored Undergraduate students in 1-on-1 sessions, using personally tailored study plans for Math and CS",
+            "For Math taught Calculus I-II, for CS taught various languages, with a focus on Java & JavaScript",
+            "Studied and debugged thousands of lines of code and gave students feedback on their work"],
+    }
+}
 
 
 """ Xavier Flask Routes """
 
+
+@app.route('/xavier-aboutme')
+def xav_aboutme():
+    return render_template('about.html', title="Xavier's Profile", name="Xavier", contact_info=xavier_about["contact"], about_me=xavier_about["aboutme"],
+                           pic_url="./static/img/XavierPP.png",
+                           about_route="xav_aboutme",
+                           work_route='xav_work',
+                           hobby_route='xav_hobby',
+                           education_route='xav_education',
+                           places_route='xav_places',
+                           url=os.getenv("URL"))
+
+
 @app.route('/xavier-work')
-def workexp():
-    return render_template('work.html', title="Xavier's Profile",name="Xavier",company_name="MLH Fellowship", role="Site Reliability Engineer Fellow",
-                           work_length="Jan 30/2023 - April 30/2023", url=os.getenv("URL"))
+def xav_work():
+    return render_template('work.html', title="Xavier's Profile", name="Xavier",
+                           work_length="Jan 30/2023 - April 30/2023",
+                           pic_url="./static/img/XavierPP.png",
+                           about_route="xav_aboutme",
+                           work_route='xav_work',
+                           hobby_route='xav_hobby',
+                           education_route='xav_education',
+                           places_route='xav_places',
+                           career=xavier_career,  # Uses xavier_career dict to fill out details
+                           url=os.getenv("URL"))
 
 
+@app.route('/xavier-education')
+def xav_education():
+    return render_template('education.html', title="Xavier's Profile", name="Xavier",
+                           pic_url="./static/img/XavierPP.png",
+                           about_route="xav_aboutme",
+                           work_route='xav_work',
+                           hobby_route='xav_hobby',
+                           education_route='xav_education',
+                           places_route='xav_places',
+                           url=os.getenv("URL"))
+
+
+@app.route('/xavier-hobbies')
+def xav_hobby():
+    return render_template('hobbies.html', title="Xavier's Profile", name="Xavier",
+                           pic_url="./static/img/XavierPP.png",
+                           about_route="xav_aboutme",
+                           work_route='xav_work',
+                           hobby_route='xav_hobby',
+                           education_route='xav_education',
+                           places_route='xav_places',
+                           url=os.getenv("URL"))
+
+
+@app.route('/xavier-places')
+def xav_places():
+    return render_template('places.html', title="Xavier's Profile", name="Xavier",
+                           pic_url="./static/img/XavierPP.png",
+                           about_route="xav_aboutme",
+                           work_route='xav_work',
+                           hobby_route='xav_hobby',
+                           education_route='xav_education',
+                           places_route='xav_places',
+                           url=os.getenv("URL"))
+
+
+""" Cindy Flask Routes """
 "Cindy About Me"
-@app.route('/cindy-aboutme')
-def aboutme():
-    return render_template('about.html', title="Cindy's Profile",name ="Cindy",contact_info="cindyliang0127@gmail.com", about_me="Hello! My name is Cindy Liang and I am currently a junior studying at NYU [insert more information] If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.",pic_url="./static/img/CindyPP.png",url=os.getenv("URL"))
 
 
+@ app.route('/cindy-aboutme')
+def cindy_aboutme():
+    return render_template('about.html', title="Cindy's Profile", name="Cindy", contact_info="cindyliang0127@gmail.com", about_me="Hello! My name is Cindy Liang and I am currently a junior studying at NYU [insert more information] If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.",
+                           pic_url="./static/img/CindyPP.png",
+                           about_route="cindy_aboutme",
+                           work_route='',
+                           hobby_route='',
+                           education_route='',
+                           places_route='',
+                           url=os.getenv("URL"))
+
+
+""" Route Template """
+
+""" 
+@app.route('/YourName-education')
+def xav_education():
+    return render_template('type.html', title="Name's Profile", name="",
+                           pic_url=".png",
+                           about_route="",
+                           work_route='',
+                           hobby_route='',
+                           education_route='',
+                           places_route='',
+                           url=os.getenv("URL"))
+
+
+ """
