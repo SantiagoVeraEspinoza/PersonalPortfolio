@@ -51,6 +51,23 @@ xavier_career = {
     }
 }
 
+santiago_about = {
+    "contact": "santiveraespinoza@gmail.com",
+    "aboutme": "I am a future engineer in computer technologies currently studying at Tecnológico de Monterrey (ITESM, 2021 - 2025). I have been programming since 16, self-taught. My main language is C++, I can also program in Python, Matlab, R and HTML. Made some videogames on my own, as well as some physics simulators. I also have good knowledge in Office and Adobe apps."
+}
+
+santiago_career = {
+    "jobcount": 1,
+    "companies": ["MLH Fellowship"],
+    "jobtitle": ["Site Reliability Engineer Fellow"],
+    "dates": ["Jan 2023 - April 2023"],
+    "descriptions": {
+        0: ["Worked in a cohort of 20 other members"],
+    }
+}
+
+""" Cindy Routes """
+
 cindy_about = {
     "contact": "cindyliang0127@gmail.com",
     "aboutme": "I am currently a junior studying Computer Science at NYU. I am passionate about full stack software development and in my free time, I like to immerse myself with Natural Langauge Processing and UX/UI design. I am currently honing my coding skills for C and would like to pick up more languages in the future so I can keeping learning and improving."
@@ -68,6 +85,8 @@ cindy_career = {
         3: ["Designed app features to improve urgent health care user’s experience by making it more efficient and accessible. Experience working with tech stacks and startup operation"],
     }
 }
+
+
 
 
 
@@ -128,11 +147,70 @@ def xav_hobby():
 def xav_places():
     return render_template('places.html', title="Xavier's Profile", name="Xavier",
                            pic_url="./static/img/XavierPP.png",
-                           about_route="xav_aboutme",
+                           about_route='xav_aboutme',
                            work_route='xav_work',
                            hobby_route='xav_hobby',
                            education_route='xav_education',
                            places_route='xav_places',
+                           url=os.getenv("URL"))
+
+""" Santiago Flask Routes """
+"Santiago About Me"
+
+@app.route('/santiago-aboutme')
+def san_aboutme():
+    return render_template('about.html', title="Santiago's Profile", name="Santiago", contact_info=santiago_about["contact"], about_me=santiago_about["aboutme"],
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
+                           url=os.getenv("URL"))
+
+@app.route('/santiago-work')
+def san_work():
+    return render_template('work.html', title="Santiago's Profile", name="Santiago",
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
+                           career=santiago_career,  # Uses xavier_career dict to fill out details
+                           url=os.getenv("URL"))
+
+@app.route('/santiago-education')
+def san_education():
+    return render_template('education.html', title="Santiago's Profile", name="Santiago",
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
+                           url=os.getenv("URL"))
+
+@app.route('/santiago-hobbies')
+def san_hobby():
+    return render_template('hobbies.html', title="Santiago's Profile", name="Santiago",
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
+                           url=os.getenv("URL"))
+
+@app.route('/santiago-places')
+def san_places():
+    return render_template('places.html', title="Santiago's Profile", name="Santiago",
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
                            url=os.getenv("URL"))
 
 
