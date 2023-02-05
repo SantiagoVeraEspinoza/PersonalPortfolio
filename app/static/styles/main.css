@@ -175,9 +175,38 @@ ul {
     list-style: none;
 }
 
-/* CSS Styles for abotme */
+/* CSS Styles for aboutme */
 .aboutme p {
     font-size: 20px;
+}
+
+/* CSS Styles for Hobbies */
+
+.personal-hobbies p {
+    font-size: 20px;
+}
+
+.hobby-side-r {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    
+}
+
+.hobby-side-r img {
+    max-height: 300px;
+    max-width: 400px;
+}
+
+.hobby-text {
+    margin-right: 5%;
+}
+
+.hobby-text h1{
+    text-align: center;
 }
 
 
