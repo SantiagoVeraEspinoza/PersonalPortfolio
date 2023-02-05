@@ -131,8 +131,10 @@ def xav_places():
                            places_route='xav_places',
                            url=os.getenv("URL"))
 
+
 """ Santiago Flask Routes """
 "Santiago About Me"
+
 
 @app.route('/santiago-aboutme')
 def san_aboutme():
@@ -144,6 +146,7 @@ def san_aboutme():
                            education_route='san_education',
                            places_route='san_places',
                            url=os.getenv("URL"))
+
 
 @app.route('/santiago-work')
 def san_work():
@@ -157,6 +160,7 @@ def san_work():
                            career=santiago_career,  # Uses xavier_career dict to fill out details
                            url=os.getenv("URL"))
 
+
 @app.route('/santiago-education')
 def san_education():
     return render_template('education.html', title="Santiago's Profile", name="Santiago",
@@ -168,6 +172,7 @@ def san_education():
                            places_route='san_places',
                            url=os.getenv("URL"))
 
+
 @app.route('/santiago-hobbies')
 def san_hobby():
     return render_template('hobbies.html', title="Santiago's Profile", name="Santiago",
@@ -178,6 +183,7 @@ def san_hobby():
                            education_route='san_education',
                            places_route='san_places',
                            url=os.getenv("URL"))
+
 
 @app.route('/santiago-places')
 def san_places():
