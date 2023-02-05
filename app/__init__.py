@@ -51,6 +51,21 @@ xavier_career = {
     }
 }
 
+santiago_about = {
+    "contact": "santiveraespinoza@gmail.com",
+    "aboutme": "I am a future engineer in computer technologies currently studying at Tecnológico de Monterrey (ITESM, 2021 - 2025). I have been programming since 16, self-taught. My main language is C++, I can also program in Python, Matlab, R and HTML. Made some videogames on my own, as well as some physics simulators. I also have good knowledge in Office and Adobe apps."
+}
+
+santiago_career = {
+    "jobcount": 1,
+    "companies": ["MLH Fellowship"],
+    "jobtitle": ["Site Reliability Engineer Fellow"],
+    "dates": ["Jan 2023 - April 2023"],
+    "descriptions": {
+        0: ["Worked in a cohort of 20 other members"],
+    }
+}
+
 
 """ Xavier Flask Routes """
 
@@ -109,11 +124,70 @@ def xav_hobby():
 def xav_places():
     return render_template('places.html', title="Xavier's Profile", name="Xavier",
                            pic_url="./static/img/XavierPP.png",
-                           about_route="xav_aboutme",
+                           about_route='xav_aboutme',
                            work_route='xav_work',
                            hobby_route='xav_hobby',
                            education_route='xav_education',
                            places_route='xav_places',
+                           url=os.getenv("URL"))
+
+""" Santiago Flask Routes """
+"Santiago About Me"
+
+@app.route('/santiago-aboutme')
+def san_aboutme():
+    return render_template('about.html', title="Santiago's Profile", name="Santiago", contact_info=santiago_about["contact"], about_me=santiago_about["aboutme"],
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
+                           url=os.getenv("URL"))
+
+@app.route('/santiago-work')
+def san_work():
+    return render_template('work.html', title="Santiago's Profile", name="Santiago",
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
+                           career=santiago_career,  # Uses xavier_career dict to fill out details
+                           url=os.getenv("URL"))
+
+@app.route('/santiago-education')
+def san_education():
+    return render_template('education.html', title="Santiago's Profile", name="Santiago",
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
+                           url=os.getenv("URL"))
+
+@app.route('/santiago-hobbies')
+def san_hobby():
+    return render_template('hobbies.html', title="Santiago's Profile", name="Santiago",
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
+                           url=os.getenv("URL"))
+
+@app.route('/santiago-places')
+def san_places():
+    return render_template('places.html', title="Santiago's Profile", name="Santiago",
+                           pic_url="./static/img/SantiagoPP.png",
+                           about_route='san_aboutme',
+                           work_route='san_work',
+                           hobby_route='san_hobby',
+                           education_route='san_education',
+                           places_route='san_places',
                            url=os.getenv("URL"))
 
 
@@ -125,7 +199,7 @@ def xav_places():
 def cindy_aboutme():
     return render_template('about.html', title="Cindy's Profile", name="Cindy", contact_info="cindyliang0127@gmail.com", about_me="Hello! My name is Cindy Liang and I am currently a junior studying at NYU [insert more information] If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.",
                            pic_url="./static/img/CindyPP.png",
-                           about_route="cindy_aboutme",
+                           about_route='cindy_aboutme',
                            work_route='',
                            hobby_route='',
                            education_route='',
