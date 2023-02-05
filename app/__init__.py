@@ -66,6 +66,29 @@ santiago_career = {
     }
 }
 
+""" Cindy Routes """
+
+cindy_about = {
+    "contact": "cindyliang0127@gmail.com",
+    "aboutme": "I am currently a junior studying Computer Science at NYU. I am passionate about full stack software development and in my free time, I like to immerse myself with Natural Langauge Processing and UX/UI design. I am currently honing my coding skills for C and would like to pick up more languages in the future so I can keeping learning and improving."
+}
+
+cindy_career = {
+    "jobcount": 4,
+    "companies": ["MLH Fellowship", "Self-Employed", "ReachNBeyond", "Naomedical"],
+    "jobtitle": ["Site Reliability Engineer Fellow", "Private Math Tutor", "Computer Science Teacher", "UX/UI Intern"],
+    "dates": ["Jan 2023 - April 2023", "January 2023 - Present", "June 2022 - Present", "June 2021 - August 2021"],
+    "descriptions": {
+        0: ["Worked in a cohort of 20 other members"],
+        1: ["Tutored K-12 students in 1-on-1 sessions with custom made study designs"],
+        2: ["Taught over 50 students Computer Science (Javascript) and Math"],
+        3: ["Designed app features to improve urgent health care user’s experience by making it more efficient and accessible. Experience working with tech stacks and startup operation"],
+    }
+}
+
+
+
+
 
 """ Xavier Flask Routes """
 
@@ -201,16 +224,66 @@ def san_places():
 "Cindy About Me"
 
 
+@app.route('/cindy-places')
+def cindy_places():
+    return render_template('places.html', title="Cindy's Profile", name="Cindy",
+                           pic_url="./static/img/CindyPP.png",
+                           about_route="cindy_aboutme",
+                           work_route="cindy_work",
+                           hobby_route="cindy_hobby",
+                           education_route="cindy_education",
+                           places_route="cindy_places",
+                           url=os.getenv("URL"))
+
+@app.route('/cindy-work')
+def cindy_work():
+    return render_template('work.html',title="Cindy's Profile", name="Cindy",
+                            work_length = "date",
+                           pic_url="./static/img/CindyPP.png",
+                           about_route="cindy_aboutme",
+                           work_route="cindy_work",
+                           hobby_route="cindy_hobby",
+                           education_route="cindy_education",
+                           places_route="cindy_places",
+                           career= cindy_career,
+                           url=os.getenv("URL"))
+
+
+@app.route('/cindy-education')
+def cindy_education():
+    return render_template('education.html', title="Cindy's Profile", name="Cindy",
+                           pic_url="./static/img/CindyPP.png",
+                           about_route="cindy_aboutme",
+                           work_route="cindy_work",
+                           hobby_route="cindy_hobby",
+                           education_route="cindy_education",
+                           places_route="cindy_places",
+                           url=os.getenv("URL"))
+
+@app.route('/cindy-hobbies')
+def cindy_hobby():
+    return render_template('hobbies.html', title="Cindy's Profile", name="Cindy",
+                           pic_url="./static/img/CindyPP.png",
+                           about_route="cindy_aboutme",
+                           work_route="cindy_work",
+                           hobby_route="cindy_hobby",
+                           education_route="cindy_education",
+                           places_route="cindy_places",
+                           url=os.getenv("URL"))
+
+
 @ app.route('/cindy-aboutme')
 def cindy_aboutme():
-    return render_template('about.html', title="Cindy's Profile", name="Cindy", contact_info="cindyliang0127@gmail.com", about_me="Hello! My name is Cindy Liang and I am currently a junior studying at NYU [insert more information] If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.",
+    return render_template('about.html', title="Cindy's Profile", name="Cindy", contact_info=cindy_about["contact"], about_me=cindy_about["aboutme"],
                            pic_url="./static/img/CindyPP.png",
-                           about_route='cindy_aboutme',
-                           work_route='',
-                           hobby_route='',
-                           education_route='',
-                           places_route='',
+                           about_route="cindy_aboutme",
+                           work_route="cindy_work",
+                           hobby_route="cindy_hobby",
+                           education_route="cindy_education",
+                           places_route="cindy_places",
                            url=os.getenv("URL"))
+
+
 
 
 """ Route Template """
