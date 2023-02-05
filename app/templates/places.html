@@ -1,93 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta property="og:title" content="Personal Portfolio" />
-    <meta property="og:description" content="My Personal Portfolio" />
-    <meta property="og:url" content="{{ url }}" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta property="og:title" content="Personal Portfolio" />
+  <meta property="og:description" content="My Personal Portfolio" />
+  <meta property="og:url" content="{{ url }}" />
 
-    <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
-    <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Inserting LeafLet Library -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin="">
+  <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
+  <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
 
-    <title>{{ title }}</title>
-  </head>
-  <body>
-    <header class="nav-bar">
-      <div class="nav-content">
-        <a href="/">
-          <div class="nav-logo">
-            <img src="./static/img/logo.svg" />
-          </div>
-        </a>
-      </div>
-    </header>
+  <!-- Inserting LeafLet Library -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
-    <div class="profile">
-      <div class="space-container">
-        <div id="profile-picture" class="profile-picture">
-          <img src="{{pic_url}}" />
-          <h1>{{ name }}</h1>
+  <title>{{ title }}</title>
+</head>
+
+<body>
+  <header class="nav-bar">
+    <div class="nav-content">
+      <a href="/">
+        <div class="nav-logo">
+          <img src="./static/img/logo.svg" />
         </div>
+      </a>
+    </div>
+  </header>
+
+  <div class="profile">
+    <div class="space-container">
+      <div id="profile-picture" class="profile-picture">
+        <img src="{{pic_url}}" />
+        <h1>{{ name }}</h1>
       </div>
     </div>
+  </div>
 
-    <div class="section-nav-bar">
+  <div class="section-nav-bar">
+    <ul>
+      <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
+      <li><a href="{{ url_for(work_route) }}">Work Experience</a></li>
+      <li><a href="{{ url_for(education_route) }}">Education</a></li>
+      <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
+      <li><a href="{{ url_for(places_route) }}" class="focus-link">Places Visited</a></li>
+    </ul>
+  </div>
+
+  <!-- Start of Leaflet Map -->
+
+  <div class="map-container">
+    <div id="map" class="map" style="width: 600px; height: 400px;"></div>
+    <div class="visit-list">
+      <h1>Some of my travel experiences!</h1>
       <ul>
-        <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
-        <li><a href="{{ url_for(work_route) }}">Work Experience</a></li>
-        <li><a href="{{ url_for(education_route) }}">Education</a></li>
-        <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
-        <li><a href="{{ url_for(places_route) }}" class="focus-link">Places Visited</a></li>
+        <li class="home"><b>Home: </b> <span class="country-origin">{{ mapper['country_origin'] }}</span></li>
+        {%for i in range(mapper["places"] | length)%}
+        <li class="vistited-places"> {{ mapper["places"][i] }} </li>
+        {%endfor%}
       </ul>
     </div>
-
-    <!-- Start of Leaflet Map -->
-
-    <div class="map-container">
-      <div id="map" class="map" style="width: 600px; height: 400px;"></div>
-      <div class="visit-list">
-        <h1>Some Interesting Places I've been to!</h1>
-        <ul>
-          <li class="home">Home: </li>
-
-          <li>Country : State : City</li>
-          <li class="reason">So I was</li>
-        </ul>
-      </div>
-    </div>
+  </div>
 
 
-    <!-- Leaflet JS File -->
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-     crossorigin=""></script>
-     <script>
-       var map = L.map('map').setView([50.84673, 4.35247], 12);
-       L.tileLayer('https://tile.openstreetmap.be/osmbe/{z}/{x}/{y}.png', {
-        attribution:
-         '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' +
-         ', Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>',
-           maxZoom: 18
-        }).addTo(map);
+  <!-- Leaflet JS File -->
 
-        var marker = L.marker([50.84673, 4.35247]).addTo(map);
-        var popup = marker.bindPopup('<b>Hello world!</b><br />I am a popup.');
-     </script>
-  </body>
+  <!-- Leaflet Marker JS -->
+  <script>
+    // Turns mapper data with users information regarding descriptions and trips into a usable json value by js
+    let user_mapper = '{{mapper | tojson}}'
+    let parsed_mapper = JSON.parse(user_mapper);
+    console.log(parsed_mapper);
+
+    // Creates the map starting coordinates, num[] gives the zoom out length, 1 is max zoom out
+    var map = L.map('map').
+      setView([`${parsed_mapper.hometown_coords['lat']}`, `${parsed_mapper.hometown_coords['long']}`], 4);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // hometown marker
+    var marker = L.marker([`${parsed_mapper.hometown_coords['lat']}`, `${parsed_mapper.hometown_coords['long']}`]
+    ).addTo(map);
+    marker.bindPopup(`<b>${parsed_mapper.hometown}</b><br>${parsed_mapper.homecity} my hometown!`).openPopup();
+
+    // Places a map-marker based on the users origin
+    for (let i = 0; i < parsed_mapper.places.length; i++) {
+      let fable_marker = L.marker([`${parsed_mapper.places_coords[i]['lat']}`, `${parsed_mapper.places_coords[i]['long']}`]).addTo(map);
+      fable_marker.bindPopup(`<b>${parsed_mapper.places[i]}</b><br>${parsed_mapper.description[i]}`);
+      fable_marker._icon.classList.add("huechange");
+    }
+
+
+
+
+
+  </script>
+</body>
+
 </html>

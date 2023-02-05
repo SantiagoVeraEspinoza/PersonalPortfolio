@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 from flask import Flask, render_template, request
+import json
 import os
 
 
@@ -51,6 +52,26 @@ xavier_career = {
     }
 }
 
+xavier_mapper = {
+    "country_origin": "United States of America, TX, Dallas",
+    "hometown": "Dallas, TX",
+    "homecity": "Dallas",
+    "hometown_coords": {"lat": 32.7767, "long": -96.7970},
+    "places": ['Phoenix, AZ - Grand Canyon', 'Austin, TX - UT', 'San Antonio,  TX - UTSA', 'San Diego, CA - MCRD', 'Cambridge, MA - MIT', 'Cambridge, MA - Harvard', 'Stanford, CA - Stanford'],
+    "description": ['My visit to the grand canyon is easily one of my favorite memories. Enjoying time with friends in new places is always welcome.', 'My first time going to another city for a hackathon. This is where I participated at HackTX!', 'After HackTX in Austin, I ended up starting to travel further and further for hackathons. This is RowdyHacks.', 'This the first time I ever flew within the US. I saw one of my close relatives graduate at San Diego\'s Marine Bootcamp', 'I participated at HackMIT here. It was a legendary experience, and my first time flying for a hackathon!', 'In Boston again! This time as a Judge for HackHarvard.', 'One of the most exciting hackathons yet. Stanfords TreeHacks!'],
+    "places_coords": [
+        {"lat": 36.0544, "long": -112.1401},
+        {"lat": 30.2849, "long": -97.7341},
+        {"lat": 29.5831, "long": -98.6199},
+        {"lat": 32.7415, "long": -117.1977},
+        {"lat": 42.3601, "long": -71.0942},
+        {"lat": 42.3770, "long": -71.1167},
+        {"lat": 37.4275, "long": -122.1697}
+    ],
+}
+
+""" Santiago section_info """
+
 santiago_about = {
     "contact": "santiveraespinoza@gmail.com",
     "aboutme": "I am a future engineer in computer technologies currently studying at Tecnológico de Monterrey (ITESM, 2021 - 2025). I have been programming since 16, self-taught. My main language is C++, I can also program in Python, Matlab, R and HTML. Made some videogames on my own, as well as some physics simulators. I also have good knowledge in Office and Adobe apps."
@@ -66,7 +87,7 @@ santiago_career = {
     }
 }
 
-""" Cindy Routes """
+""" Cindy section_info """
 
 cindy_about = {
     "contact": "cindyliang0127@gmail.com",
@@ -87,7 +108,7 @@ cindy_career = {
 }
 
 
-
+""" Raven section_info """
 
 
 """ Xavier Flask Routes """
@@ -152,6 +173,8 @@ def xav_places():
                            hobby_route='xav_hobby',
                            education_route='xav_education',
                            places_route='xav_places',
+                           mapper=xavier_mapper,
+                           #    mapperjson=json.dumps(xavier_mapper),
                            url=os.getenv("URL"))
 
 
@@ -235,17 +258,18 @@ def cindy_places():
                            places_route="cindy_places",
                            url=os.getenv("URL"))
 
+
 @app.route('/cindy-work')
 def cindy_work():
-    return render_template('work.html',title="Cindy's Profile", name="Cindy",
-                            work_length = "date",
+    return render_template('work.html', title="Cindy's Profile", name="Cindy",
+                           work_length="date",
                            pic_url="./static/img/CindyPP.png",
                            about_route="cindy_aboutme",
                            work_route="cindy_work",
                            hobby_route="cindy_hobby",
                            education_route="cindy_education",
                            places_route="cindy_places",
-                           career= cindy_career,
+                           career=cindy_career,
                            url=os.getenv("URL"))
 
 
@@ -259,6 +283,7 @@ def cindy_education():
                            education_route="cindy_education",
                            places_route="cindy_places",
                            url=os.getenv("URL"))
+
 
 @app.route('/cindy-hobbies')
 def cindy_hobby():
@@ -282,8 +307,6 @@ def cindy_aboutme():
                            education_route="cindy_education",
                            places_route="cindy_places",
                            url=os.getenv("URL"))
-
-
 
 
 """ Route Template """

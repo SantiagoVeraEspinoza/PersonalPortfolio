@@ -225,15 +225,37 @@ ul {
     margin-top: 30px;
 }
 
-.visit-list li{
+#map {
+    height: 400px;
+}
+
+.visit-list {
+    margin-left: 5%;
+}
+
+.visit-list .home{
+    font-size: 24px;
+}
+
+.visit-list li {
     font-size: 20px;
 }
 
+
+
 .home {
     margin-bottom: 10px;
+    list-style-type: none;
+    
 }
 
 .reason{
     list-style-type: none;
 }
 
+img.huechange { filter: hue-rotate(120deg); }
+
+/* map text styles */
+.country-origin{
+    color: #1d539f;
+}
