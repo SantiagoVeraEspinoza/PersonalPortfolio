@@ -54,6 +54,7 @@ xavier_career = {
 }
 
 xavier_hobby = {
+    "n_hobbies": 2,
     "hobbies": ["Hiking", "Language Learning"],
     "description": ["In my opinion hiking is one of the best things you can do to relax yourself, especially when you are high on stress. Pictured to the right is a photo I took while on a hike in the Grand Canyon. Most of the hiking I do isn't as crazy as that, although my trip was a good memory. Generally just going walking among grassy and slightly rocky fields is my go to!", "I find studying languages to be very fascinating. There have been many studies done on the effects on language, and the results are very interesting. To study language is to quite literally change your brain and perspective. Well benefits aside, I simply enjoy taking on different systems of writing/speaking and thought. I'm currently studying Japanese, and so far it's been quite a journey. Kanji is definitely no joke!"],
     "url": ['./static/img/xav_hobby/xav_hobby1.jpg', './static/img/xav_hobby/xav_hobby2.jpg'],
@@ -93,6 +94,16 @@ santiago_career = {
     "descriptions": {
         0: ["Worked in a cohort of 20 other members"],
     }
+}
+
+santiago_hobby = {
+    "n_hobbies": 3,
+    "hobbies": ["Videogames", "Anime", "Soccer"],
+    "description": ["I love videogames with all my soul, they have been my passion since I was little. I love all its edges, from the art design to the gameplay generation. My favorites are from Nintendo, but I play everything. Video games will be something that even though the years go by I will continue playing.",
+                    "Anime is something that my brothers have included in me since I was a child, so I have normalized it a lot in my life. It is something super natural for me and away from the taboo, it is a very consumed product in my family. There are animes that have marked me and I consider they have many brilliant proposals for the world of entertainment. I also think that they have influenced a lot from the culture of western animation.",
+                    "Soccer is something that my family has instilled in me since I was a child. My uncles are very fanatical and that fever has infected me all my life. I have a great passion for my Leon team, and I always watch my team's games and playoffs."],
+    "url": ['./static/img/san_hobby/Videogames.jpg', './static/img/san_hobby/Anime.jpg', './static/img/san_hobby/Soccer.jpeg'],
+    "credit": ['', 'credit :aaron-burden unsplash ']
 }
 
 """ Cindy section_info """
@@ -237,6 +248,7 @@ def san_hobby():
                            hobby_route='san_hobby',
                            education_route='san_education',
                            places_route='san_places',
+                           user_hobbies=santiago_hobby,
                            url=os.getenv("URL"))
 
 
