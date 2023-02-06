@@ -45,11 +45,24 @@
       <ul>
         <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
         <li><a href="{{ url_for(work_route) }}">Work Experience</a></li>
-        <li><a href="{{ url_for(education_route) }}" class="focus-link">Education</a></li>
+        <li>
+          <a href="{{ url_for(education_route) }}" class="focus-link"
+            >Education</a
+          >
+        </li>
         <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
         <li><a href="{{ url_for(places_route) }}">Places Visited</a></li>
       </ul>
     </div>
 
+    <div class="personal-hobbies">
+      <div class="hobby-side-r">
+        <div class="hobby-text">
+          <h1>{{user_education["university"]}}</h1>
+          <p>{{user_education["degree"]}}</p>
+          <p>{{user_education["length"]}}</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
