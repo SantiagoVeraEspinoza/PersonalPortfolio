@@ -1,93 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta property="og:title" content="Personal Portfolio" />
-    <meta property="og:description" content="My Personal Portfolio" />
-    <meta property="og:url" content="{{ url }}" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta property="og:title" content="Personal Portfolio" />
+  <meta property="og:description" content="My Personal Portfolio" />
+  <meta property="og:url" content="{{ url }}" />
 
-    <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
-    <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
-    <title>{{ title }}</title>
-  </head>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <header class="nav-bar">
-      <div class="nav-content">
-        <a href="/">
-          <div class="nav-logo">
-            <img src="./static/img/logo.svg" />
-          </div>
+  <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
+  <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
+  <title>{{ title }}</title>
+</head>
+
+<body>
+  <header class="nav-bar">
+    <div class="nav-content">
+      <a href="/">
+        <div class="nav-logo">
+          <img src="./static/img/logo.svg" />
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <div class="profile">
+    <div class="space-container">
+      <div id="profile-picture" class="profile-picture">
+        <a href="{{ url_for('xav_aboutme') }}">
+          <img src="./static/img/XavierPP.png" />
+          <h1>Xavier</h1>
         </a>
       </div>
-    </header>
 
-    <div class="profile">
-      <div class="space-container">
-        <div id="profile-picture" class="profile-picture">
-          <a href="{{ url_for('xav_aboutme') }}">
-            <img src="./static/img/XavierPP.png" />
-            <h1>Xavier</h1>
-          </a>
-        </div>
+      <div id="profile-picture" class="profile-picture">
+        <a href="{{ url_for('san_aboutme')}}">
+          <img src="./static/img/SantiagoPP.png" />
+          <h1>Santiago</h1>
+        </a>
+      </div>
 
-        <div id="profile-picture" class="profile-picture">
-          <a href="{{ url_for('san_aboutme')}}">
-            <img src="./static/img/SantiagoPP.png" />
-            <h1>Santiago</h1>
-          </a>
-        </div>
-
-        <div id="profile-picture" class="profile-picture">
+      <div id="profile-picture" class="profile-picture">
+        <a href="{{ url_for('rav_aboutme') }}">
           <img src="./static/img/RavenPP.png" />
           <h1>Raven</h1>
-        </div>
+        </a>
+      </div>
 
-        <div id="profile-picture" class="profile-picture">
-          <a href="{{ url_for('cin_aboutme') }}">
-            <img src="./static/img/CindyPP.png" />
-            <h1>Cindy</h1>
-          </a>
-        </div>
+      <div id="profile-picture" class="profile-picture">
+        <a href="{{ url_for('cin_aboutme') }}">
+          <img src="./static/img/CindyPP.png" />
+          <h1>Cindy</h1>
+        </a>
       </div>
     </div>
+  </div>
 
-    <div class="section-header">
-      <h1>Team Projects</h1>
-    </div>
+  <div class="section-header">
+    <h1>Team Projects</h1>
+  </div>
 
-    <div class="projects project1">
-      <div class="project-header">
-        <h1 class="project-name">{{ project_1 }}</h1>
-        <h1 class="project-date">{{ date_1 }}</h1>
-      </div>
-      <h2 class="project-languages">{{ languages }}</h2>
-      <ul>
-        <li>
-          Created a Portfolio Website as a team of 4, using Flask for the
-          backend
-        </li>
-        <li>
-          Project was developed in an agile style, with members completing tasks
-          using github issues
-        </li>
-        <li>Project was deployed on AWS</li>
-        <li class="site-link"><b>Site: {{ site_url }}</b><a href=""></a></li>
-        <li class="site-link">
-          <b>Github:</b><a href="{{ github_link }}">{{ github_link }}</a>
-        </li>
-      </ul>
+  <div class="projects project1">
+    <div class="project-header">
+      <h1 class="project-name">{{ project_1 }}</h1>
+      <h1 class="project-date">{{ date_1 }}</h1>
     </div>
-  </body>
+    <h2 class="project-languages">{{ languages }}</h2>
+    <ul>
+      <li>
+        Created a Portfolio Website as a team of 4, using Flask for the
+        backend
+      </li>
+      <li>
+        Project was developed in an agile style, with members completing tasks
+        using github issues
+      </li>
+      <li>Project was deployed on AWS</li>
+      <li class="site-link"><b>Site: {{ site_url }}</b><a href=""></a></li>
+      <li class="site-link">
+        <b>Github:</b><a href="{{ github_link }}">{{ github_link }}</a>
+      </li>
+    </ul>
+  </div>
+</body>
+
 </html>
