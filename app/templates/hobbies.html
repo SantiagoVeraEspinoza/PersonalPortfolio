@@ -54,22 +54,6 @@
       </ul>
     </div>
 
-    <!-- <div class="personal-hobbies">
-      {%for i in range(user_hobbies["n_hobbies"])%}
-      <div class="hobby-side-r">
-        <div class="hobby-text">
-          <h1>{{user_hobbies["hobbies"][i]}}</h1>
-          <p>{{user_hobbies["description"][i]}}</p>
-        </div>
-        <img
-          src="{{user_hobbies['url'][i]}}"
-          alt="{{user_hobbies['credit'][i]}}"
-          class="hobby-img"
-        />
-      </div>
-      {%endfor%}
-    </div> -->
-
     <div class="personal-hobbies">
       {%for i in range(user_hobbies["n_hobbies"])%}
         {%if i%2==0%}
