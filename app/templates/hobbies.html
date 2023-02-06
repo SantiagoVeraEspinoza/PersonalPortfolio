@@ -55,7 +55,7 @@
     </div>
 
     <div class="personal-hobbies">
-      {%for i in range(2)%}
+    {%for i in range(user_hobbies["n_hobbies"])%}
       <div class="hobby-side-r">
         <div class="hobby-text">
           <h1>{{user_hobbies["hobbies"][i]}}</h1>
