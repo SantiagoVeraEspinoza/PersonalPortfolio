@@ -1,116 +1,123 @@
-p, h1, h2, h3, h4, h5, h6, button {
-    font-family: "Roboto", serif;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Roboto", serif;
 }
 
 body {
-    background-color: #f5f5f9;
-    background-size: cover;
-    width: auto; 
-    overflow-x: hidden;
-    font-family: "Roboto", serif;
-    margin: 0px;
-    margin-bottom: 2%;
+  background-color: #f5f5f9;
+  background-size: cover;
+  width: auto;
+  overflow-x: hidden;
+  font-family: "Roboto", serif;
+  margin: 0px;
+  margin-bottom: 2%;
 }
 
 .nav-bar {
-    width: 100%;
-    display: inline-block;
-    background-color: #1C539F;
-    font-family: "Roboto", serif;
-    font-weight: 700 !important;
-    padding-top: 10px;
+  width: 100%;
+  display: inline-block;
+  background-color: #1c539f;
+  font-family: "Roboto", serif;
+  font-weight: 700 !important;
+  padding-top: 10px;
 }
 
 .nav-content .logo-touch-target {
-    display: inline-flex;
-    height: 60%;
-    width: 350px;
+  display: inline-flex;
+  height: 60%;
+  width: 350px;
 }
 
 .nav-content .nav-logo {
-    height: 60px;
-    margin: auto;
+  height: 60px;
+  margin: auto;
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-logo img {
-    width: 200px;
+  width: 200px;
 }
 
 .nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
+  display: block;
+  width: 100%;
+  text-align: right;
+  padding-top: 0px;
+  padding-right: 0px;
 }
 
 .profile {
-    background-color: #1d539f !important;
-    text-align: center;
-    height: 320px;
-    margin-bottom: 50px;
+  background-color: #1d539f !important;
+  text-align: center;
+  height: 320px;
+  margin-bottom: 50px;
 }
 
 .profile-picture a {
-    text-decoration: none; /* removes the underline from link-clicks */
+  text-decoration: none; /* removes the underline from link-clicks */
 }
 
 .profile h1 {
-        font-size: 30px;
-        font-weight: 700;
-        color: white;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
 }
 
 .space-container {
-    width: 90%;
-    display: flex;
-    margin: auto;
-    justify-content: space-evenly;
+  width: 90%;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
 }
 
 .profile img {
-        border-radius: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;        
-        padding: 20px;
-        transition: transform 0.2s ease-in-out;
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
 }
 
 .profile img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .profile .profile-picture {
-    margin-bottom: 30px;
-    height: 200px;
+  margin-bottom: 30px;
+  height: 200px;
 }
 
 .banner {
-    padding: 20px 0px 50px 0px;
-    height: 150px;
-    background-color: #1d539f;
+  padding: 20px 0px 50px 0px;
+  height: 150px;
+  background-color: #1d539f;
 }
 
 .banner .logo {
-    max-width:180px;
-    max-height:60px;
-    width: auto;
-    height: auto;
+  max-width: 180px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
 }
 
 .banner .title {
-    color: white;
-    font-size: 50px;
-    font-weight: 700;
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
 }
 
 /* Start of Custom CSS Styles */
@@ -120,171 +127,169 @@ body {
 
 /* Div - Section_Header */
 .section-header h1 {
-    font-size: 40px;
-    text-align: center;
-    margin: 0;
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
 }
-
 
 /* Div Projects */
 
 .project-header {
-    display: flex;
-    justify-content: space-between;
-    text-align: inner;
-    align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  text-align: inner;
+  align-items: baseline;
 }
 
 .projects {
-    width: 70%;
-    margin: auto;
+  width: 70%;
+  margin: auto;
 }
 
 .projects h2 {
-    margin: 0;
+  margin: 0;
 }
 
-
 .project-header h1 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .project-name {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .project-date {
-    font-size: 20px;
-    font-weight: 600;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .project-languages {
-    font-size: 20px;
-    font-weight: 600;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 ul {
-    margin: 0;
+  margin: 0;
 }
 
 .projects li {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .site-link {
-    list-style: none;
+  list-style: none;
 }
 
 /* CSS Styles for aboutme */
 .aboutme p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 /* CSS Styles for Hobbies */
 
 .personal-hobbies p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .hobby-side-r {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .hobby-side-r img {
-    max-height: 300px;
-    max-width: 400px;
+  max-height: 300px;
+  max-width: 400px;
 }
 
 .hobby-text {
-    margin-right: 5%;
+  margin-right: 5%;
 }
 
-.hobby-text h1{
-    text-align: center;
+.hobby-text-alt {
+  margin-left: 5%;
 }
 
-
+.hobby-text h1 {
+  text-align: center;
+}
 
 /* CSS Styles for the Individual Page Nav-Bars */
-.section-nav-bar ul{
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
+.section-nav-bar ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
 }
 
 .section-nav-bar a {
-    text-decoration: none; /* removes the underline */
-    color: black;
-    font-weight: 600;
-    font-size: 20px;
+  text-decoration: none; /* removes the underline */
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .section-nav-bar a:hover {
-    background-color: #e2a120;
-    color: white;
-    border-radius: 5%;
-    padding: 2px;
-    border: 2px;
+  background-color: #e2a120;
+  color: white;
+  border-radius: 5%;
+  padding: 2px;
+  border: 2px;
 }
 
-.section-nav-bar .focus-link { 
-    color: #2672E3;
-    font-weight: 800;
+.section-nav-bar .focus-link {
+  color: #2672e3;
+  font-weight: 800;
 }
 
 .company-span {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Map Style */
 .map-container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 80%;
-    margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
 }
 
 .map {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 #map {
-    height: 400px;
+  height: 400px;
 }
 
 .visit-list {
-    margin-left: 5%;
+  margin-left: 5%;
 }
 
-.visit-list .home{
-    font-size: 24px;
+.visit-list .home {
+  font-size: 24px;
 }
 
 .visit-list li {
-    font-size: 20px;
+  font-size: 20px;
 }
-
-
 
 .home {
-    margin-bottom: 10px;
-    list-style-type: none;
-    
+  margin-bottom: 10px;
+  list-style-type: none;
 }
 
-.reason{
-    list-style-type: none;
+.reason {
+  list-style-type: none;
 }
 
-img.huechange { filter: hue-rotate(120deg); }
+img.huechange {
+  filter: hue-rotate(120deg);
+}
 
 /* map text styles */
-.country-origin{
-    color: #1d539f;
+.country-origin {
+  color: #1d539f;
 }
