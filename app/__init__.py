@@ -120,11 +120,42 @@ cindy_career = {
     "dates": ["Jan 2023 - April 2023", "January 2023 - Present", "June 2022 - Present", "June 2021 - August 2021"],
     "descriptions": {
         0: ["Worked in a cohort of 20 other members"],
-        1: ["Tutored K-12 students in 1-on-1 sessions with custom made study designs"],
+        1: ["Tutored K-12 students in 1-on-1 sessions with custom made lesson plans"],
         2: ["Taught over 50 students Computer Science (Javascript) and Math"],
         3: ["Designed app features to improve urgent health care user’s experience by making it more efficient and accessible. Experience working with tech stacks and startup operation"],
     }
 }
+
+cindy_hobby = {
+    "hobbies": ["Dancing and Karaoke", "Watching Anime"],
+    "description": ["I love to learn hip-hop dances and sing off-pitch into my karaoke mic. I still don't know how to sing with my diaphram. Any advice would be much appreciated.", "I love to watch shounen anime (My favorite is One Piece)"],
+"url": ['./static/img/cin_hobby/cin_hobby1.jpg', './static/img/cin_hobby/cin_hobby2.jpg'],
+    "credit": ['', 'credit :aaron-burden unsplash ']
+}
+
+cindy_mapper = {
+
+    "country_origin": "United States of America, NY, Brooklyn",
+    "hometown": "Brooklyn, NY",
+    "homecity": "Brooklyn",
+    "hometown_coords": {"lat": 40.650002, "long": -73.949997},
+    "places": ['New Haven, CT'],
+    "description": ['I rubbed the Therodore Dwight Woolsey statue for good luck. :)'],
+    "places_coords": [
+        {"lat": 41.316307, "long": -72.922585}
+    ]
+
+}
+
+cindy_education = {
+    "university": "New York University",
+    "degree": "Computer Science, Bachelor's Degree of Science",
+    "length": "September 2020 - May 2024"
+}
+
+
+
+
 
 
 """ Raven section_info """
@@ -269,64 +300,67 @@ def san_places():
 
 
 @app.route('/cindy-places')
-def cindy_places():
+def cin_places():
     return render_template('places.html', title="Cindy's Profile", name="Cindy",
                            pic_url="./static/img/CindyPP.png",
-                           about_route="cindy_aboutme",
-                           work_route="cindy_work",
-                           hobby_route="cindy_hobby",
-                           education_route="cindy_education",
-                           places_route="cindy_places",
+                           about_route="cin_aboutme",
+                           work_route="cin_work",
+                           hobby_route="cin_hobby",
+                           education_route="cin_education",
+                           places_route="cin_places",
+                           mapper=cindy_mapper,
                            url=os.getenv("URL"))
 
 
 @app.route('/cindy-work')
-def cindy_work():
+def cin_work():
     return render_template('work.html', title="Cindy's Profile", name="Cindy",
                            work_length="date",
                            pic_url="./static/img/CindyPP.png",
-                           about_route="cindy_aboutme",
-                           work_route="cindy_work",
-                           hobby_route="cindy_hobby",
-                           education_route="cindy_education",
-                           places_route="cindy_places",
+                           about_route="cin_aboutme",
+                           work_route="cin_work",
+                           hobby_route="cin_hobby",
+                           education_route="cin_education",
+                           places_route="cin_places",
                            career=cindy_career,
                            url=os.getenv("URL"))
 
 
 @app.route('/cindy-education')
-def cindy_education():
+def cin_education():
     return render_template('education.html', title="Cindy's Profile", name="Cindy",
                            pic_url="./static/img/CindyPP.png",
-                           about_route="cindy_aboutme",
-                           work_route="cindy_work",
-                           hobby_route="cindy_hobby",
-                           education_route="cindy_education",
-                           places_route="cindy_places",
+                           about_route="cin_aboutme",
+                           work_route="cin_work",
+                           hobby_route="cin_hobby",
+                           education_route="cin_education",
+                           places_route="cin_places",
+                           user_education = cindy_education,
                            url=os.getenv("URL"))
 
 
 @app.route('/cindy-hobbies')
-def cindy_hobby():
+def cin_hobby():
     return render_template('hobbies.html', title="Cindy's Profile", name="Cindy",
                            pic_url="./static/img/CindyPP.png",
-                           about_route="cindy_aboutme",
-                           work_route="cindy_work",
-                           hobby_route="cindy_hobby",
-                           education_route="cindy_education",
-                           places_route="cindy_places",
+                           about_route="cin_aboutme",
+                           work_route="cin_work",
+                           hobby_route="cin_hobby",
+                           education_route="cin_education",
+                           places_route="cin_places",
+                           user_hobbies = cindy_hobby,
                            url=os.getenv("URL"))
 
 
 @ app.route('/cindy-aboutme')
-def cindy_aboutme():
+def cin_aboutme():
     return render_template('about.html', title="Cindy's Profile", name="Cindy", contact_info=cindy_about["contact"], about_me=cindy_about["aboutme"],
                            pic_url="./static/img/CindyPP.png",
-                           about_route="cindy_aboutme",
-                           work_route="cindy_work",
-                           hobby_route="cindy_hobby",
-                           education_route="cindy_education",
-                           places_route="cindy_places",
+                           about_route="cin_aboutme",
+                           work_route="cin_work",
+                           hobby_route="cin_hobby",
+                           education_route="cin_education",
+                           places_route="cin_places",
                            url=os.getenv("URL"))
 
 
