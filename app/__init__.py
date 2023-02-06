@@ -212,6 +212,7 @@ cindy_career = {
 
 cindy_hobby = {
     "hobbies": ["Dancing and Karaoke", "Watching Anime"],
+    "n_hobbies": 2,
     "description": ["I love to learn hip-hop dances and sing off-pitch into my karaoke mic. I still don't know how to sing with my diaphram. Any advice would be much appreciated.", "I love to watch shounen anime (My favorite is One Piece)"],
     "url": ['./static/img/cin_hobby/cin_hobby1.jpg', './static/img/cin_hobby/cin_hobby2.jpg'],
     "credit": ['', 'credit :aaron-burden unsplash ']
