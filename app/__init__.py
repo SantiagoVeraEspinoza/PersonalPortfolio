@@ -241,6 +241,55 @@ cindy_education = {
 
 """ Raven section_info """
 
+raven_about = {
+    "contact": "raejdickerson@gmail.com",
+    "aboutme": "I am a Junior Software Engineer with interests in DevOps/SRE and I love coding. When I'm not writing code, I love to dance and collect Sailor Moon merchandise. I am constantly looking to improve my technical skills and stay up-to-date with the latest trends in the industry."
+}
+
+raven_career = {
+    "jobcount": 3,
+    "companies": ["MLH Fellowship", "Hexagon", "Jack Henry & Associates", "Ignite Fueling Innovation"],
+    "jobtitle": ["Site Reliability Engineer Fellow", "Jr. Software Engineer", "DevOps Apprentice", "Help Desk Specialist"],
+    "dates": ["Jan 2023 - April 2023", "February 2023 - Present", "July 2022 - January 2023", "November 2021 - July 2022"],
+    "descriptions": {
+        0: ["Worked in a cohort of 20 other members"],
+        1: ["Designs, develops and maintains software"],
+        2: ["Was responsible for assisting in the automation and continuous delivery of software applications"],
+        3: ["Provided technical support to users by answering inquiries, resolving problems, and maintaining customer satisfaction with the use of computer systems and software"],
+    }
+}
+
+raven_hobby = {
+    "hobbies": ["Coding", "Dancing", "Collecting Sailor Moon Merch"],
+    "description": ["I love to code, dance & obsess over Sailor Moon"],
+    "url": ['./static/img/rav_hobby/code.jpg', './static/img/rav_hobby/dance.jpg', './static/img/rav_hobby/sailorMoon.jpg'],
+    "credit": ['', '', ''],
+    "n_hobbies": 3
+}
+
+raven_mapper = {
+    "country_origin": "United States of America, Baton Rouge, LA",
+    "hometown": "Baton Rouge, LA",
+    "homecity": "Baton Rouge",
+    "hometown_coords": {"lat": 30.471165, "long": -91.147385},
+    "places": ['Washington DC', 'Huntsville, AL'],
+    "description": ['I was at the Inauguration when former President Barack Obama was sworn in office!'],
+    "places_coords": [
+        {"lat": 38.9072, "long": 77.0369},
+        {"lat": 34.7304, "long": 86.5861}
+    ],
+}
+
+raven_education = {
+    "university": "JF Drake State Community & Technical College",
+    "degree": "Computer InformatSystems, Associates of ApplScience",
+    "length": "August 2019 - May 2021"
+}
+
+"""  """
+
+# {"university": "Western Governors University","degree": "Cloud Computing, Bachelor's Degree of Science","length": "July 2022 - December 2023"}
+
 
 """ Xavier Flask Routes """
 
@@ -449,19 +498,68 @@ def cin_aboutme():
                            url=os.getenv("URL"))
 
 
-""" Route Template """
-
-""" 
-@app.route('/YourName-education')
-def xav_education():
-    return render_template('type.html', title="Name's Profile", name="",
-                           pic_url=".png",
-                           about_route="",
-                           work_route='',
-                           hobby_route='',
-                           education_route='',
-                           places_route='',
+""" Raven Routes """
+@ app.route('/raven-aboutme')
+def rav_aboutme():
+    return render_template('about.html', title="Raven's Profile", name="Raven", contact_info=raven_about["contact"], about_me=raven_about["aboutme"],
+                           pic_url="./static/img/RavenPP.png",
+                           about_route="rav_aboutme",
+                           work_route='rav_work',
+                           hobby_route='rav_hobby',
+                           education_route='rav_education',
+                           places_route='rav_places',
                            url=os.getenv("URL"))
 
 
- """
+@ app.route('/raven-work')
+def rav_work():
+    return render_template('work.html', title="Raven's Profile", name="Raven",
+                           work_length="Jan 30/2023 - April 30/2023",
+                           pic_url="./static/img/RavenPP.png",
+                           about_route="rav_aboutme",
+                           work_route='rav_work',
+                           hobby_route='rav_hobby',
+                           education_route='rav_education',
+                           places_route='rav_places',
+                           career=raven_career,  # Uses raven_career dict to fill out details
+                           url=os.getenv("URL"))
+
+
+@ app.route('/raven-education')
+def rav_education():
+    return render_template('education.html', title="Raven's Profile", name="Raven",
+                           pic_url="./static/img/RavenPP.png",
+                           about_route="rav_aboutme",
+                           work_route='rav_work',
+                           hobby_route='rav_hobby',
+                           education_route='rav_education',
+                           places_route='rav_places',
+                           user_education=raven_education,
+                           url=os.getenv("URL"))
+
+
+@ app.route('/raven-hobbies')
+def rav_hobby():
+    return render_template('hobbies.html', title="Raven's Profile", name="Raven",
+                           pic_url="./static/img/RavenPP.png",
+                           about_route="rav_aboutme",
+                           work_route='rav_work',
+                           hobby_route='rav_hobby',
+                           education_route='rav_education',
+                           places_route='rav_places',
+                           user_hobbies=raven_hobby,
+                           url=os.getenv("URL"))
+
+
+@ app.route('/raven-places')
+def rav_places():
+    return render_template('places.html', title="Raven's Profile", name="Raven",
+                           pic_url="./static/img/RavenPP.png",
+                           about_route='rav_aboutme',
+                           work_route='rav_work',
+                           hobby_route='rav_hobby',
+                           education_route='rav_education',
+                           places_route='rav_places',
+                           mapper=raven_mapper,
+                           #    mapperjson=json.dumps(raven_mapper),
+                           url=os.getenv("URL"))
