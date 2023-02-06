@@ -79,6 +79,12 @@ xavier_mapper = {
     ],
 }
 
+xavier_education = {
+    "university": "Dallas County Community College",
+    "degree": "Associates of Science, Computer Engineering",
+    "length": "Jan 2023 - December 2023"
+}
+
 """ Santiago section_info """
 
 santiago_about = {
@@ -129,7 +135,7 @@ cindy_career = {
 cindy_hobby = {
     "hobbies": ["Dancing and Karaoke", "Watching Anime"],
     "description": ["I love to learn hip-hop dances and sing off-pitch into my karaoke mic. I still don't know how to sing with my diaphram. Any advice would be much appreciated.", "I love to watch shounen anime (My favorite is One Piece)"],
-"url": ['./static/img/cin_hobby/cin_hobby1.jpg', './static/img/cin_hobby/cin_hobby2.jpg'],
+    "url": ['./static/img/cin_hobby/cin_hobby1.jpg', './static/img/cin_hobby/cin_hobby2.jpg'],
     "credit": ['', 'credit :aaron-burden unsplash ']
 }
 
@@ -152,10 +158,6 @@ cindy_education = {
     "degree": "Computer Science, Bachelor's Degree of Science",
     "length": "September 2020 - May 2024"
 }
-
-
-
-
 
 
 """ Raven section_info """
@@ -199,6 +201,7 @@ def xav_education():
                            hobby_route='xav_hobby',
                            education_route='xav_education',
                            places_route='xav_places',
+                           user_education=xavier_education,
                            url=os.getenv("URL"))
 
 
@@ -335,7 +338,7 @@ def cin_education():
                            hobby_route="cin_hobby",
                            education_route="cin_education",
                            places_route="cin_places",
-                           user_education = cindy_education,
+                           user_education=cindy_education,
                            url=os.getenv("URL"))
 
 
@@ -348,7 +351,7 @@ def cin_hobby():
                            hobby_route="cin_hobby",
                            education_route="cin_education",
                            places_route="cin_places",
-                           user_hobbies = cindy_hobby,
+                           user_hobbies=cindy_hobby,
                            url=os.getenv("URL"))
 
 
