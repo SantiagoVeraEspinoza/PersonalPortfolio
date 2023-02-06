@@ -138,6 +138,7 @@ body {
 .projects {
     width: 70%;
     margin: auto;
+    margin-top: 35px;
 }
 
 .projects h2 {

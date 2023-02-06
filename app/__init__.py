@@ -112,6 +112,84 @@ santiago_hobby = {
     "credit": ['', 'credit :aaron-burden unsplash ']
 }
 
+santiago_mapper = {
+    "country_origin": "United States of Mexico, Guanajuato, León of the Aldama",
+    "hometown": "León, GTO, MEX",
+    "homecity": "León, ",
+    "hometown_coords": {"lat": 21.122002, "long": -101.683309},
+    "places": ['New York, NY, USA', 'Jackson, MS, USA', 'Los Angeles, CA, USA', 'San Francisco, CA, USA', 'Denver, CO, USA', 'Albuquerque, NM, USA', 'New Orleans, LA, USA', 'Orlando, FL, USA', 'Dalas, TX, USA', 'San Antonio, TX, USA', 'Corpus Christi, TX, USA', 'Gruene, TX, USA', 'Fredericksburg, TX, USA', 'Johnson City, TX, USA', 'Tapalpa, JC, MEX', 'Tequila, JC, MEX', 'Guanajuato, GTO, MEX', 'San Miguel de Allende, GTO, MEX', 'Los Cabos, BCS, MEX', 'Santiago de Querétaro, QRO, MEX', 'Puebla, PU, MEX', 'Puerto de Veracruz, VE, MEX', 'Ocampo, MI, MEX', 'Cancún, QR, MEX', 'Playa del Carmen, QR, MEX', 'Tulum, QR, MEX', 'Holbox, QR, MEX', 'Mexico City, CDMX, MEX', 'Kingston, JMA', 'George Town, Caiman Islands'],
+    "description": [
+                    'I went to Times Square, Rockefeller Center, Chinatown, Central Park, the Statue of Liberty and many other tourist destinations.',
+                    'I went to NorthPark mall and to visit some relatives in Yazoo.',
+                    'I went to Disneyland, Hollywood and to visit my great aunt.',
+                    'I went to the Golden Gate bridge, Lombard street and many other destinations.',
+                    'I went to some malls and went shopping with my family.',
+                    'I went to see several of my relatives.',
+                    'I went to eat Gumbo, Beignets, walk downtown, went to the French Quarter, etc.',
+                    'I went to disney world, universal studios and various malls.',
+                    'I went for a walk with my family, but it was so long ago that I don\'t remember.',
+                    'I went to the Riverwalk, The Alamo and downtown, in addition to eating and walking around.',
+                    'Went to see the statue of Selena and spend New Years with my sister-in-law\'s family',
+                    'I went to eat BBQ ribs and walk downtown.',
+                    'I went to see the city center and the parks.',
+                    'I went to see the light decorations in the city.',
+                    'I went to see the magical town and its surroundings.',
+                    'I went to see the tequila factories and the town center.',
+                    'I went to see the center and walk through the alleys, the cathedrals, the tunnels, the museums, the university and the nightlife of this world heritage site.',
+                    'I went to see the center, the restaurants, the cathedral and the city market.',
+                    'I went to see the beaches and the city center.',
+                    'I went to visit my girlfriend and to walk through the center of the city and its squares.',
+                    'I went to the pyramid of Cholula and to Angelopolis.',
+                    'I went for a walk through the city, the port and to see the base of San Juan de Ulua.',
+                    'I went to visit the monarch butterfly forest.',
+                    'I went to the beach and the hotel zone.',
+                    'I went to the beach and to fifth avenue.',
+                    'I went to the hotel zone to see several cenotes.',
+                    'I went for a walk in the center of the island and for a walk on the beach.',
+                    'I went to Polanco, the Zona Rosa, Reforma, the Chapultepec Park, the Soumaya Museum and many other destinations.',
+                    'I went downtown and to the golden beaches of the country.',
+                    'I went to see the surroundings, the houses and the public beaches.'
+                    ],
+    "places_coords": [
+        {"lat": 40.748561, "long": -73.985949},
+        {"lat": 32.307996, "long": -90.223068},
+        {"lat": 34.049038, "long": -118.245602},
+        {"lat": 37.789362, "long": -122.404815},
+        {"lat": 39.738387, "long": -104.932711},
+        {"lat": 35.091881, "long": -106.649710},
+        {"lat": 30.015087, "long": -90.074147},
+        {"lat": 28.523341, "long": -81.378381},
+        {"lat": 32.766328, "long": -96.797480},
+        {"lat": 29.419371, "long": -98.496523},
+        {"lat": 27.766592, "long": -97.427650},
+        {"lat": 29.738066, "long": -98.103406},
+        {"lat": 30.271858, "long": -98.873254},
+        {"lat": 30.276094, "long": -98.409432},
+        {"lat": 19.945191, "long": -103.758844},
+        {"lat": 20.884962, "long": -103.838157},
+        {"lat": 21.017413, "long": -101.257367},
+        {"lat": 20.913694, "long": -100.743839},
+        {"lat": 22.889425, "long": -109.913515},
+        {"lat": 20.593162, "long": -100.386702},
+        {"lat": 19.042306, "long": -98.214254},
+        {"lat": 19.201246, "long": -96.143635},
+        {"lat": 19.561673, "long": -100.296288},
+        {"lat": 21.168719, "long": -86.839966},
+        {"lat": 20.637669, "long": -87.062793},
+        {"lat": 20.209861, "long": -87.465696},
+        {"lat": 21.523641, "long": -87.379452},
+        {"lat": 19.432471, "long": -99.130907},
+        {"lat": 18.017617, "long": -76.810133},
+        {"lat": 19.286895, "long": -81.367687}
+    ],
+}
+
+santiago_education = {
+    "university": "Instituto Tecnológico de Estudios Superiores de Monterrey",
+    "degree": "Bachelor in Computer Tecnologies Engineering",
+    "length": "Aug 2021 - Jun 2025 (Graduation date)"
+}
+
 """ Cindy section_info """
 
 cindy_about = {
@@ -270,6 +348,7 @@ def san_education():
                            hobby_route='san_hobby',
                            education_route='san_education',
                            places_route='san_places',
+                           user_education=santiago_education,
                            url=os.getenv("URL"))
 
 
@@ -295,6 +374,8 @@ def san_places():
                            hobby_route='san_hobby',
                            education_route='san_education',
                            places_route='san_places',
+                           mapper=santiago_mapper,
+                           #    mapperjson=json.dumps(xavier_mapper),
                            url=os.getenv("URL"))
 
 
