@@ -312,6 +312,7 @@ def xav_aboutme():
                            hobby_route='xav_hobby',
                            education_route='xav_education',
                            places_route='xav_places',
+                           user_hobbies=xavier_hobby,
                            url=os.getenv("URL"))
 
 
@@ -326,6 +327,7 @@ def xav_work():
                            education_route='xav_education',
                            places_route='xav_places',
                            career=xavier_career,  # Uses xavier_career dict to fill out details
+                           user_education=xavier_education,
                            url=os.getenv("URL"))
 
 
@@ -338,7 +340,6 @@ def xav_education():
                            hobby_route='xav_hobby',
                            education_route='xav_education',
                            places_route='xav_places',
-                           user_education=xavier_education,
                            url=os.getenv("URL"))
 
 
@@ -351,7 +352,6 @@ def xav_hobby():
                            hobby_route='xav_hobby',
                            education_route='xav_education',
                            places_route='xav_places',
-                           user_hobbies=xavier_hobby,
                            url=os.getenv("URL"))
 
 
@@ -395,18 +395,6 @@ def san_work():
                            education_route='san_education',
                            places_route='san_places',
                            career=santiago_career,  # Uses xavier_career dict to fill out details
-                           url=os.getenv("URL"))
-
-
-@app.route('/santiago-education')
-def san_education():
-    return render_template('education.html', title="Santiago's Profile", name="Santiago",
-                           pic_url="./static/img/SantiagoPP.png",
-                           about_route='san_aboutme',
-                           work_route='san_work',
-                           hobby_route='san_hobby',
-                           education_route='san_education',
-                           places_route='san_places',
                            user_education=santiago_education,
                            url=os.getenv("URL"))
 
@@ -466,20 +454,11 @@ def cin_work():
                            education_route="cin_education",
                            places_route="cin_places",
                            career=cindy_career,
-                           url=os.getenv("URL"))
-
-
-@app.route('/cindy-education')
-def cin_education():
-    return render_template('education.html', title="Cindy's Profile", name="Cindy",
-                           pic_url="./static/img/CindyPP.png",
-                           about_route="cin_aboutme",
-                           work_route="cin_work",
-                           hobby_route="cin_hobby",
-                           education_route="cin_education",
-                           places_route="cin_places",
                            user_education=cindy_education,
                            url=os.getenv("URL"))
+
+
+
 
 
 @app.route('/cindy-hobbies')
@@ -530,22 +509,9 @@ def rav_work():
                            hobby_route='rav_hobby',
                            education_route='rav_education',
                            places_route='rav_places',
-                           career=raven_career,  # Uses raven_career dict to fill out details
-                           url=os.getenv("URL"))
-
-
-@ app.route('/raven-education')
-def rav_education():
-    return render_template('education.html', title="Raven's Profile", name="Raven",
-                           pic_url="./static/img/RavenPP.png",
-                           about_route="rav_aboutme",
-                           work_route='rav_work',
-                           hobby_route='rav_hobby',
-                           education_route='rav_education',
-                           places_route='rav_places',
                            user_education=raven_education,
+                           career=raven_career,  # Uses raven_career dict to fill out details,
                            url=os.getenv("URL"))
-
 
 @ app.route('/raven-hobbies')
 def rav_hobby():
