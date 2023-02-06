@@ -169,6 +169,11 @@ body {
   font-weight: 600;
 }
 
+.project-degree {
+  font-size: 24px;
+  font-weight: 400;
+}
+
 ul {
   margin: 0;
 }

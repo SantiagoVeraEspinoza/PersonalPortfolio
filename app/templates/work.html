@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta property="og:title" content="Personal Portfolio">
-        <meta property="og:description" content="My Personal Portfolio">
-        <meta property="og:url" content="{{ url }}">
-    
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-            rel="stylesheet">
-    
-        <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-        <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
-        <title>{{ title }}</title>
-    </head>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <meta property="og:url" content="{{ url }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
+    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
+    <title>{{ title }}</title>
+</head>
+
 <body>
     <header class="nav-bar">
         <div class="nav-content">
@@ -38,31 +40,40 @@
     </div>
 
     <div class="section-nav-bar">
-       <ul>
-        <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
-        <li><a href="{{ url_for(work_route) }}" class="focus-link">Work Experience</a></li>
-        <li><a href="{{ url_for(education_route) }}">Education</a></li>
-        <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
-        <li><a href="{{ url_for(places_route) }}">Places Visited</a></li>
-       </ul> 
+        <ul>
+            <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
+            <li><a href="{{ url_for(work_route) }}" class="focus-link">Work & Education</a></li>
+            <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
+            <li><a href="{{ url_for(places_route) }}">Places Visited</a></li>
+        </ul>
     </div>
 
-{%for i in range(career["jobcount"])%}
     <div class="projects project1">
         <div class="project-header">
-            <h1 class="project-name"><span class="company-span">{{ career["companies"][i] }}</span> - {{ career["jobtitle"][i] }}</h1>
+            <h1 class="project-name">{{ user_education["university"] }}</h1>
+            <h1 class="project-date">{{ user_education["length"] }}</h1>
+        </div>
+        <h1 class="project-degree">{{ user_education["degree"] }}</h1>
+    </div>
+
+
+    {%for i in range(career["jobcount"])%}
+    <div class="projects project1">
+        <div class="project-header">
+            <h1 class="project-name"><span class="company-span">{{ career["companies"][i] }}</span> - {{
+                career["jobtitle"][i] }}</h1>
             <h1 class="project-date">{{ career["dates"][i] }}</h1>
         </div>
         <ul>
             {%for k in range(career["descriptions"][i]|length)%}
             <li> {{ career["descriptions"][i][k] }} </li>
-            {%endfor%} 
+            {%endfor%}
         </ul>
     </div>
-{%endfor%} 
+    {%endfor%}
 
-    
-<!-- 
+
+    <!-- 
 {%for i in range(career["jobcount"])%}
 <li> {{career["companies"][i]}} </li>
 {%endfor%} -->
@@ -70,4 +81,5 @@
 
 
 </body>
+
 </html>
