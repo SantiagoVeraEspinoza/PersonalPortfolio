@@ -132,6 +132,70 @@ body {
   margin: 0;
 }
 
+/* Div timeline header */
+.timeline-header {
+  background-color: #1d539f !important;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.timeline-header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.flexbox {
+  display: flex;  
+  flex-wrap: wrap;
+
+  margin: 10px;
+
+  justify-content: center;
+}
+
+.box {
+  background-color: #e2a120;
+  padding: 10px;
+  margin: 5px;
+
+  border-radius: 10px;
+  width: 340px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+  transform: scale(1.015);
+}
+
+body.no-hover .box:not(.large):hover {
+  transform: none;
+}
+
+.box.large {
+  transform: scale(1.5);
+}
+
+.top_post_box{
+  display: flex;
+}
+
+.username {
+  margin-bottom: 0px;
+}
+
+.date {
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.mail {
+  margin-top: 1px;
+
+  font-size: 10px;
+}
+
 /* Div Projects */
 
 .project-header {

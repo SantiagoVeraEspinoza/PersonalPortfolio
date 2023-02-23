@@ -6,6 +6,7 @@ from playhouse.shortcuts import model_to_dict
 
 import os
 import datetime
+import requests
 
 load_dotenv()
 
@@ -275,6 +276,17 @@ def rav_places():
                            mapper=raven_mapper,
                            #    mapperjson=json.dumps(raven_mapper),
                            url=os.getenv("URL"))
+
+@ app.route('/timeline')
+def timeline():
+    response = requests.get('http://127.0.0.1:5000/api/timeline_post')
+    data = response.json()
+    print(response)
+
+    return render_template("timeline.html", title="Timeline",
+    data = data,
+    data_lenght = len(data['timeline_posts'])
+    )
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
