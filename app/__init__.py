@@ -293,3 +293,12 @@ def get_time_line_post():
                 for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
             ]
         }
+
+@app.route('/api/timeline_post', methods=['DELETE'])
+def delete_last_time_line_post():
+    last_post = TimelinePost.select().order_by(TimelinePost.created_at.desc()).first()
+    if last_post:
+        last_post.delete_instance()
+        return {'message': 'Post deleted successfully'}
+    else:
+        return {'error': 'No posts found'}
