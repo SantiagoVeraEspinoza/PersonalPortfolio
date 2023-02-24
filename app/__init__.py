@@ -279,7 +279,7 @@ def rav_places():
 
 @ app.route('/timeline')
 def timeline():
-    response = requests.get('http://127.0.0.1:5000/api/timeline_post')
+    response = requests.get('http://137.184.73.24:5000/api/timeline_post')
     data = response.json()
     print(response)
 
