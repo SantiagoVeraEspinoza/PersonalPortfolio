@@ -33,6 +33,32 @@
     </div>
   </header>
 
+  <div class="send_box">
+    <form method="POST" action="{{ url_for('post_time_line_post') }}">
+      <div class="lower_sendbox_title">
+        <label for="name">User</label>
+      </div>
+      <div>        
+        <input name="name" id="name" style="display: block; margin: 0 auto;" required>
+      </div>
+      <div class="lower_sendbox_title">        
+        <label for="email">Email</label>
+      </div>
+      <div>
+        <input name="email" id="email" style="display: block; margin: 0 auto;" required>
+      </div>
+      <div class="lower_sendbox_title">
+        <label for="content">Content</label>
+      </div>
+      <div class="lower_sendbox_title">        
+        <textarea name="content" id="content" required></textarea>
+      </div>
+      <div class="submit_box">
+        <input type="submit" value="Submit" style="display: block; margin: 0 auto; margin-top: 5px;">
+      </div>
+    </form>
+  </div>
+
   <div class="flexbox">
     {%for i in range(data_lenght)%}
     <div class="box" id="box{{ i }}"> 

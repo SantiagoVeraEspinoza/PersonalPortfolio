@@ -1,12 +1,13 @@
 from app.users import *
 from peewee import *
 from dotenv import load_dotenv
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from playhouse.shortcuts import model_to_dict
 
 import os
 import datetime
 import requests
+import json
 
 load_dotenv()
 
@@ -293,9 +294,10 @@ def post_time_line_post():
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
+
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
-    return model_to_dict(timeline_post)
+    return redirect('/timeline')
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
