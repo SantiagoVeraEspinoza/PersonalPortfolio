@@ -34,7 +34,7 @@
   </header>
 
   <div class="send_box">
-    <form method="POST" action="{{ url_for('post_time_line_post') }}">
+    <form id="my-form" method="POST" action="{{ url_for('post_time_line_post') }}">
       <div class="lower_sendbox_title">
         <label for="name">User</label>
       </div>
@@ -58,6 +58,39 @@
       </div>
     </form>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Obtener el formulario por su ID
+    const form = document.getElementById('my-form');
+
+    // Agregar un manejador de eventos al formulario para el evento 'submit'
+    form.addEventListener('submit', (event) => {
+      // Detener el evento predeterminado
+      event.preventDefault();
+      
+      // Crear objeto FormData con los datos del formulario
+      const formData = new FormData(form);
+      
+      // Realizar la llamada AJAX para enviar los datos del formulario
+      $.ajax({
+        url: form.action,
+        method: form.method,
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        success: function(response) {
+          console.log('Formulario enviado exitosamente');
+          console.log(response); // Imprimir la respuesta en la consola
+          location.reload();
+        },
+        error: function(error) {
+          console.error('Error al enviar el formulario', error);
+        }
+      });
+    });
+  </script>
 
   <div class="flexbox">
     {%for i in range(data_lenght)%}

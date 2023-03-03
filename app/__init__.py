@@ -294,10 +294,9 @@ def post_time_line_post():
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
-
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
-    return redirect('/timeline')
+    return model_to_dict(timeline_post)
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
