@@ -8,10 +8,15 @@ import os
 import datetime
 import requests
 import json
+from flask import render_template_string
 
 load_dotenv()
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
     user=os.getenv("MYSQL_USER"),
     password=os.getenv("MYSQL_PASSWORD"),
     host=os.getenv("MYSQL_HOST"),
@@ -289,14 +294,31 @@ def timeline():
     data_lenght = len(data['timeline_posts'])
     )
 
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
+    if not {'name'}.issubset(request.form.keys()):
+        return render_template_string("<html><body><h1>Invalid name</h1></body></html>"), 400
+    
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
+
+    if not content:
+        return render_template_string("<html><body><h1>Invalid content</h1></body></html>"), 400
+    
+    if not '@' in email:
+        return render_template_string("<html><body><h1>Invalid Email</h1></body></html>"), 400
+
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
     return model_to_dict(timeline_post)
+
+
+
+
+
+
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
