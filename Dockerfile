@@ -6,9 +6,11 @@ COPY requirements.txt .
 
 RUN pip3 install -r requirements.txt
 
+RUN pip3 install requests
+
 COPY . .
 
-ENV FLASK_APP=src/run.py
+ENV FLASK_APP=app/__init__.py
 
 CMD ["flask", "run", "--host=0.0.0.0"]
 
