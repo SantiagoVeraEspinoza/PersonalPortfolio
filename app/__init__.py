@@ -32,10 +32,20 @@ class TimelinePost(Model):
     class Meta:
         database = mydb
 
+app = Flask(__name__)
+
 mydb.connect()
 mydb.create_tables([TimelinePost])
+mydb.close()
 
-app = Flask(__name__)
+@app.before_request
+def _db_connect():
+    mydb.connect()
+
+@app.teardown_request
+def _db_close(exc):
+    if not mydb.is_closed():
+        mydb.close()
 
 if __name__ == "__main__":
     app.run()
@@ -309,6 +319,8 @@ def post_time_line_post():
     
     if not '@' in email:
         return render_template_string("<html><body><h1>Invalid Email</h1></body></html>"), 400
+
+    print(f"{name} | {email} | {content}")
 
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
