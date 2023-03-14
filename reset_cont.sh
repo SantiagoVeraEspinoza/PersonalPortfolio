@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source rm_all-dckr.sh
+source rm_images.sh
 
 docker compose up
