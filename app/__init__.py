@@ -36,7 +36,7 @@ app = Flask(__name__)
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
-mydb.close()
+if os.getenv("TESTING") == "false": mydb.close()
 
 @app.before_request
 def _db_connect():
@@ -48,7 +48,7 @@ def _db_close(exc):
         mydb.close()
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False)
 
 @app.route('/')
 def index():
