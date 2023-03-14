@@ -36,7 +36,7 @@ app = Flask(__name__)
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
-if os.getenv("TESTING") == "false": mydb.close()
+if not os.getenv("TESTING") == "true": mydb.close()
 
 if os.getenv("DEPLOYED", False) == "true":
     @app.before_request
