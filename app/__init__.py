@@ -38,14 +38,15 @@ mydb.connect()
 mydb.create_tables([TimelinePost])
 if os.getenv("TESTING") == "false": mydb.close()
 
-@app.before_request
-def _db_connect():
-    mydb.connect()
+if os.getenv("DEPLOYED", False) == "true":
+    @app.before_request
+    def _db_connect():
+        mydb.connect()
 
-@app.teardown_request
-def _db_close(exc):
-    if not mydb.is_closed():
-        mydb.close()
+    @app.teardown_request
+    def _db_close(exc):
+        if not mydb.is_closed():
+            mydb.close()
 
 if __name__ == "__main__":
     app.run(debug=False)
