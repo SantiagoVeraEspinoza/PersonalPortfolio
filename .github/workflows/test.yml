@@ -31,4 +31,4 @@ jobs:
         run: python3-virtualenv/bin/pip install requests
 
       - name: Run Tests
-        run: ./run_test.sh
+        run: source ./run_test.sh
