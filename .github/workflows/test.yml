@@ -31,7 +31,7 @@ jobs:
         run: ls -R
 
       - name: Install Dependencies
-        run: ./python3-virtualenv/bin/pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Install Requests
         run: python3-virtualenv/bin/pip install requirements
