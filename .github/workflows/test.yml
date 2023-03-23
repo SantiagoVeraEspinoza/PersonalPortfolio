@@ -24,6 +24,9 @@ jobs:
       - name: Setup Python Virtual Environment
         run: python -m venv python3-virtualenv
 
+      - name: Activate Virtual Environment
+        run: source ./python3-virtualenv/bin/activate
+
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
