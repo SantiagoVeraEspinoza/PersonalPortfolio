@@ -234,6 +234,46 @@ textarea {
 
 /* Div Projects */
 
+.yellow-container {
+  width: 300px;
+  height: 40px;
+
+  justify-content: center;
+  
+  margin-left: auto;
+  margin-right: auto;
+  
+  margin-bottom: 40px;
+}
+
+.yellow-box {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+
+  color: white;
+  text-decoration: none;
+
+  background-color: #e2a120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+
+  transition: width 0.2s ease-in-out;
+  backface-visibility: hidden;
+  pointer-events: auto;
+}
+
+.yellow-box:hover {
+  width: 300px;
+  cursor: pointer;
+
+  pointer-events: auto;
+}
+
 .project-header {
   display: flex;
   justify-content: space-between;
