@@ -3,7 +3,7 @@ team_projects = {
     "project_lang" : ['Flask, JS, Jinja, Python, Leaflet, MySQL, Docker, GitHub Actions, NGINX',],
     "project_date" : ['Jan 26/2023 - Feb 06/2023'],
     "project_desc": {
-     0: ['Created a Portfolio Website as a team of 4, using Flask for the backend',"Javascript was used to add an interactive map using the Leaflet library to showcase members travel experience", 'Project was developed in an agile style, with members completing tasks using github issues to track progress and commits', 'Later implementations using MySQL, Docker, GitHub Actions and NGINX were made',],
+     0: ['Created a Portfolio Website as a team of 4, using Flask for the backend',"Javascript was used to add an interactive map using the Leaflet library to showcase members travel experience", 'Project was developed in an agile style, with members completing tasks using github issues to track progress and commits', 'Created a server which stores the project for public access', 'Later implementations using MySQL, Docker, GitHub Actions and NGINX were made',],
     },
     "site_url": [''],
     "github_url": ['https://github.com/MLH-Fellowship/project-vitrina'],
