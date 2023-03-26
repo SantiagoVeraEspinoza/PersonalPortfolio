@@ -10,6 +10,8 @@ jobs:
   deploy:
     name: "Deploy to VPS"
     runs-on: ubuntu-latest
+    needs: run-tests
+    if: ${{ needs.run-tests.result == 'success' }}
     steps:
       - name: Configure SSH
         run: |
@@ -32,9 +34,7 @@ jobs:
         run: ssh my-vps 'source ${{ secrets.PROJECT_ROOT }}/redeploy-site.sh'
 
       - name: Print Out Container Status
-        run:
-          ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
 
       - name: Update Status on Discord
-        run:
-          curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
