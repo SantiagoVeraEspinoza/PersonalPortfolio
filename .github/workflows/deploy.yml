@@ -33,7 +33,7 @@ jobs:
 
       - name: Print Out Container Status
         run:
-          docker-compose ps
+          docker-compose -f ${{ secrets.PROJECT_ROOT }}/docker-compose.prod.yml ps
 
       - name: Update Status on Discord
         run:
