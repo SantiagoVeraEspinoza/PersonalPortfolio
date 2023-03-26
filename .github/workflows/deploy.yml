@@ -7,10 +7,36 @@ on:
   workflow_dispatch:
 
 jobs:
+  test:
+    runs-on: ubuntu-20.04
+    name: Run Tests
+    env:
+      TESTING: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.6.8'
+
+      - name: Setup Python Virtual Environment
+        run: python -m venv python3-virtualenv
+
+      - name: Install Dependencies
+        run: python3-virtualenv/bin/pip install -r requirements.txt
+
+      - name: Install Requests
+        run: python3-virtualenv/bin/pip install requests
+
+      - name: Run Tests
+        run: source ./run_test.sh
+
   deploy:
     name: "Deploy to VPS"
     runs-on: ubuntu-latest
-    needs: test.yml
+    needs: test
     steps:
       - name: Configure SSH
         run: |
