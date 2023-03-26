@@ -30,3 +30,11 @@ jobs:
 
       - name: Deploy Site
         run: ssh my-vps 'source ${{ secrets.PROJECT_ROOT }}/redeploy-site.sh'
+
+      - name: Print Out Container Status
+        run:
+          docker-compose ps
+
+      - name: Update Status on Discord
+        run:
+          curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
