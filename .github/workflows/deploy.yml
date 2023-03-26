@@ -10,8 +10,8 @@ jobs:
   deploy:
     name: "Deploy to VPS"
     runs-on: ubuntu-latest
-    needs: run-tests
-    if: ${{ needs.run-tests.result == 'success' }}
+    needs: test
+    if: ${{ needs.test.result == 'success' }}
     steps:
       - name: Configure SSH
         run: |
