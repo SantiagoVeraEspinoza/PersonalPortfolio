@@ -33,8 +33,7 @@ jobs:
 
       - name: Print Out Container Status
         run:
-          cd ${{ secrets.PROJECT_ROOT }}
-          docker-compose ps
+          ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker-compose ps'
 
       - name: Update Status on Discord
         run:
