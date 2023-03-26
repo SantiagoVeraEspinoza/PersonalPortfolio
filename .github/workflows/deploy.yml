@@ -10,7 +10,7 @@ jobs:
   deploy:
     name: "Deploy to VPS"
     runs-on: ubuntu-latest
-    needs: test
+    needs: test.yml
     steps:
       - name: Configure SSH
         run: |
