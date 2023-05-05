@@ -1,7 +1,7 @@
 version: '3'
 services:
-  myportfolio:
-    container_name: myportfolio
+  personalportfolio:
+    container_name: personalportfolio
     build: .
     restart: always
     env_file:
@@ -39,7 +39,7 @@ services:
       - nginx_secrets:/etc/letsencrypt
       - ./user_conf.d:/etc/nginx/user_conf.d
     depends_on:
-      - myportfolio
+      - personalportfolio
 
 volumes:
   mydatabase:

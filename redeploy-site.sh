@@ -2,7 +2,7 @@
 
 WD=$PWD
 
-cd /root/Projects/MLH-project-vitrina-portfolio
+cd /root/Projects/PersonalProtfolio
 
 git fetch
 git reset origin/main --hard
