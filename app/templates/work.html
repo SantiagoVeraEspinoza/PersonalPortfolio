@@ -48,37 +48,55 @@
         </ul>
     </div>
 
-    <div class="projects project1">
-        <div class="project-header">
-            <h1 class="project-name">{{ user_education["university"] }}</h1>
-            <h1 class="project-date">{{ user_education["length"] }}</h1>
-        </div>
-        <h1 class="project-degree">{{ user_education["degree"] }}</h1>
+    <div class="divisor-top">
+        <h1 class="divisor-text">Education</h1>
+        <hr>
     </div>
 
+    {%for i in range(user_education["education_count"])%}
+    <div class="projects project1">
+        <div class="project-header">
+            <h1 class="project-name">{{ user_education["university"][i] }}</h1>
+            <h1 class="project-date">{{ user_education["dates"][i] }}</h1>
+        </div>
+        <h1 class="project-degree"><b>{{ user_education["degree"][i] }}</b></h1>
+        <ul>
+            {%for k in range(user_education["descriptions"][i]|length)%}
+            <li> {{ user_education["descriptions"][i][k] }}. </li>
+            {%endfor%}
+        </ul>
+        <p class="sublist-project">
+            <b>Courses:</b> {{ user_education["courses"][i] | join(', ') }}.
+        </p>
+    </div>
+    {%endfor%}
+
+    <div class="divisor">
+        <hr>
+        <h1 class="divisor-text">Experience</h1>
+        <hr>
+    </div>
 
     {%for i in range(career["jobcount"])%}
     <div class="projects project1">
         <div class="project-header">
-            <h1 class="project-name"><span class="company-span">{{ career["companies"][i] }}</span> - {{
-                career["jobtitle"][i] }}</h1>
+            <h1 class="project-name">{{ career["companies"][i] }}</h1>
             <h1 class="project-date">{{ career["dates"][i] }}</h1>
         </div>
+        <h1 class="project-degree"><b>{{ career["jobtitle"][i] }}</b></h1>
         <ul>
             {%for k in range(career["descriptions"][i]|length)%}
-            <li> {{ career["descriptions"][i][k] }} </li>
+            <li> {{ career["descriptions"][i][k] }}. </li>
             {%endfor%}
         </ul>
+        <p class="sublist-project">
+            <b>Technical Skills:</b> {{ career["technical_skills"][i] | join(', ') }}.
+        </p>
+        <p class="sublist-project">
+            <b>Soft Skills:</b> {{ career["soft_skills"][i] | join(', ') }}.
+        </p>
     </div>
     {%endfor%}
-
-
-    <!-- 
-{%for i in range(career["jobcount"])%}
-<li> {{career["companies"][i]}} </li>
-{%endfor%} -->
-
-
 
 </body>
 

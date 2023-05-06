@@ -19,13 +19,45 @@ santiago_about = {
     "aboutme": "I am a future engineer in computer technologies currently studying at Tecnológico de Monterrey (ITESM, 2021 - 2025). I have been programming since 16, self-taught. My main language is C++, I can also program in Python, Matlab, R and HTML. I have configured Linux servers and automated their development with CI/CD with a DevOps approach for MLH. Made some videogames on my own, as well as some physics simulators. I also have good knowledge in Office and Adobe apps."
 }
 
+santiago_education = {
+    "education_count": 1,
+    "university": ["Tecnológico de Monterrey"],
+    "degree": ["BS. in Computer Sciences and Technology"],
+    "dates": ["Aug 2021 - Jun 2025 (Expected)"],
+    "descriptions": {
+        0: ["Current average grade: 96.26/100.00"],
+    },
+    "courses": {
+        0: ["Data structures and Fundamental Algorithms", "Software Construction and Decision Making", "Analysis of Software Requirements", "Object-Oriented Programming", "Modeling of Minimum Systems and Computational Architectures"],
+    }
+}
+
 santiago_career = {
     "jobcount": 1,
     "companies": ["MLH Fellowship"],
     "jobtitle": ["Site Reliability Engineer Fellow"],
     "dates": ["Jan 2023 - April 2023"],
     "descriptions": {
-        0: ["Worked in a cohort of 20 other members"],
+        0: ["Developed and monitored a server containing Flask websites using a Linux VPS", 
+            "Increased portability with Docker and scripts",
+            "Automated deployment using GitHub actions and automated testing",
+            ],
+    },
+    "technical_skills": {
+        0: ["Python with Flask and Pytest", 
+            "Bash Scripting",
+            "GitHub Actions",
+            "Centos Linux",
+            "Linux tools",
+            "Git",
+            ],
+    },
+    "soft_skills": {
+        0: ["Teamwork", 
+            "Time Management",
+            "Communication",
+            "Self Learning",
+            ],
     }
 }
 
@@ -109,10 +141,4 @@ santiago_mapper = {
         {"lat": 18.017617, "long": -76.810133},
         {"lat": 19.286895, "long": -81.367687}
     ],
-}
-
-santiago_education = {
-    "university": "Instituto Tecnológico de Estudios Superiores de Monterrey",
-    "degree": "Bachelor in Computer Tecnologies Engineering",
-    "length": "Aug 2021 - Jun 2025 (Graduation date)"
 }

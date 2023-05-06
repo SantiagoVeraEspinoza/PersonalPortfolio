@@ -59,7 +59,7 @@ def index():
 
 @app.route('/aboutme')
 def san_aboutme():
-    return render_template('about.html', title="Santiago's Profile", name="Santiago", contact_phone=santiago_about["phone"], contact_mail=santiago_about["mail"], contact_linkedin=santiago_about["linkedin"], contact_github=santiago_about["github"], about_me=santiago_about["aboutme"],
+    return render_template('about.html', title="Santiago's Profile", name="Santiago Vera Espinoza", contact_phone=santiago_about["phone"], contact_mail=santiago_about["mail"], contact_linkedin=santiago_about["linkedin"], contact_github=santiago_about["github"], about_me=santiago_about["aboutme"],
                            pic_url="./static/img/SantiagoPP.png",
                            about_route='san_aboutme',
                            work_route='san_work',
@@ -71,7 +71,7 @@ def san_aboutme():
 
 @app.route('/work')
 def san_work():
-    return render_template('work.html', title="Santiago's Profile", name="Santiago",
+    return render_template('work.html', title="Santiago's Profile", name="Santiago Vera Espinoza",
                            pic_url="./static/img/SantiagoPP.png",
                            about_route='san_aboutme',
                            work_route='san_work',
@@ -85,7 +85,7 @@ def san_work():
 
 @app.route('/hobbies')
 def san_hobby():
-    return render_template('hobbies.html', title="Santiago's Profile", name="Santiago",
+    return render_template('hobbies.html', title="Santiago's Profile", name="Santiago Vera Espinoza",
                            pic_url="./static/img/SantiagoPP.png",
                            about_route='san_aboutme',
                            work_route='san_work',
@@ -98,7 +98,7 @@ def san_hobby():
 
 @app.route('/places')
 def san_places():
-    return render_template('places.html', title="Santiago's Profile", name="Santiago",
+    return render_template('places.html', title="Santiago's Profile", name="Santiago Vera Espinoza",
                            pic_url="./static/img/SantiagoPP.png",
                            about_route='san_aboutme',
                            work_route='san_work',

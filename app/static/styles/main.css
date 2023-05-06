@@ -290,6 +290,23 @@ textarea {
   pointer-events: auto;
 }
 
+.divisor-top {
+  margin-top: 10px;
+}
+
+.divisor {
+  margin-top: 150px;
+}
+
+.divisor-text {
+  font-size: 50px;
+  margin-left: 15%;
+}
+
+.divisor-text-2 {
+  font-size: 50px;
+}
+
 .project-header {
   display: flex;
   justify-content: space-between;
@@ -326,7 +343,7 @@ textarea {
 }
 
 .project-degree {
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 400;
 }
 
@@ -335,6 +352,12 @@ ul {
 }
 
 .projects li {
+  font-size: 20px;
+}
+
+.sublist-project{
+  text-align: justify;
+  padding-left: 1em;
   font-size: 20px;
 }
 
