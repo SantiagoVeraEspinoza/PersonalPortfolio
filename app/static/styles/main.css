@@ -368,6 +368,7 @@ ul {
 /* CSS Styles for aboutme */
 .aboutme p {
   font-size: 20px;
+  text-align: justify;
 }
 
 /* CSS Styles for Hobbies */
@@ -398,8 +399,13 @@ ul {
   margin-left: 5%;
 }
 
-.hobby-text h1 {
+.hobby-text-h1 {
+  font-size: 50px;
   text-align: center;
+}
+
+.hobby-text-p {
+  text-align: justify;
 }
 
 /* CSS Styles for the Individual Page Nav-Bars */
