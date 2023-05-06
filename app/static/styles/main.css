@@ -73,6 +73,14 @@ a:visited {
   padding-right: 0px;
 }
 
+.nav-text {
+  text-align: center;
+}
+
+.nav-text {
+  text-align: center;
+}
+
 .profile {
   background-color: #61bf5b !important;
   text-align: center;
@@ -409,8 +417,15 @@ ul {
 }
 
 /* CSS Styles for the Individual Page Nav-Bars */
+.section-nav-bar {
+  margin-left: 5%;
+  margin-right: 11%;
+  margin-bottom: 25px;
+}
+
 .section-nav-bar ul {
   display: flex;
+  list-style-position: inside;
   justify-content: space-evenly;
   list-style-type: none;
 }
@@ -454,7 +469,7 @@ ul {
   min-width: 333px;
 }
 
-@media (max-width: 1352px) {
+@media (max-width: 1368px) {
   .map {
     width: 100%;
   }

@@ -49,10 +49,10 @@
 
   <div class="section-nav-bar">
     <ul>
-      <li><a href="{{ url_for(about_route) }}">About Yourself</a></li>
-      <li><a href="{{ url_for(work_route) }}">Work & Education</a></li>
-      <li><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
-      <li><a href="{{ url_for(places_route) }}" class="focus-link">Places Visited</a></li>
+      <li class="nav-text"><a href="{{ url_for(about_route) }}">About Yourself</a></li>
+      <li class="nav-text"><a href="{{ url_for(work_route) }}">Work & Education</a></li>
+      <li class="nav-text"><a href="{{ url_for(hobby_route) }}">Hobbies</a></li>
+      <li class="nav-text"><a href="{{ url_for(places_route) }}" class="focus-link">Places Visited</a></li>
     </ul>
   </div>
 
@@ -61,7 +61,7 @@
   <div class="map-container">
     <div id="map" class="map" style="height: 500px;"></div>
     <div class="visit-list">
-      <h1>Some of my travel experiences!</h1>
+      <h1 class="divisor-text-2">Some of my travel experiences!</h1>
       <p class="home"><b>Home: </b> <span class="country-origin">{{ mapper['country_origin'] }}</span></li>
       <div class="places-flex-box">
         <div>
