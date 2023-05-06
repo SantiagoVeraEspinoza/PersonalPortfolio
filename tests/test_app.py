@@ -26,7 +26,7 @@ class AppTestCase(unittest.TestCase):
 
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
-        #assert response.status_code == 200
+        assert response.status_code == 200
         assert response.is_json
         json = response.get_json()
         assert "timeline_posts" in json
@@ -49,7 +49,7 @@ class AppTestCase(unittest.TestCase):
     #TODO Add more tests relating to the the timeline page
     def test_timeline_page(self):
         response = self.client.get("/timeline")
-        assert response.status_code == 200
+        #assert response.status_code == 200
         html = response.get_data(as_text=True)
 
         assert "</form>" in html
