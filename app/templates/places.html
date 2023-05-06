@@ -59,15 +59,33 @@
   <!-- Start of Leaflet Map -->
 
   <div class="map-container">
-    <div id="map" class="map" style="width: 600px; height: 400px;"></div>
+    <div id="map" class="map" style="height: 500px;"></div>
     <div class="visit-list">
       <h1>Some of my travel experiences!</h1>
-      <ul>
-        <li class="home"><b>Home: </b> <span class="country-origin">{{ mapper['country_origin'] }}</span></li>
-        {%for i in range(mapper["places"] | length)%}
-        <li class="vistited-places"> {{ mapper["places"][i] }} </li>
-        {%endfor%}
-      </ul>
+      <p class="home"><b>Home: </b> <span class="country-origin">{{ mapper['country_origin'] }}</span></li>
+      <div class="places-flex-box">
+        <div>
+          <ul>
+            {%for i in range((mapper["places"] | length)//2)%}
+            <li> {{ mapper["places"][i] }} </li>
+            {%endfor%}
+          </ul>
+        </div>
+        <div>
+          <ul>
+            {%for i in range((mapper["places"] | length)//2, (mapper["places"] | length))%}
+            <li> {{ mapper["places"][i] }} </li>
+            {%endfor%}
+          </ul>
+        </div>
+      </div>
+      <div class="places-flex-box-alt">
+        <ul class="vistited-places">
+          {%for i in range((mapper["places"] | length))%}
+          <li class="visited-place"> {{ mapper["places"][i] }} </li>
+          {%endfor%}
+        </ul>
+      </div>
     </div>
   </div>
 

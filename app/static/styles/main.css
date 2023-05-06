@@ -442,6 +442,7 @@ ul {
 /* Map Style */
 .map-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   width: 80%;
   margin: auto;
@@ -449,6 +450,14 @@ ul {
 
 .map {
   margin-top: 30px;
+  width: 30%; 
+  min-width: 333px;
+}
+
+@media (max-width: 1352px) {
+  .map {
+    width: 100%;
+  }
 }
 
 #map {
@@ -469,7 +478,6 @@ ul {
 
 .home {
   margin-bottom: 10px;
-  list-style-type: none;
 }
 
 .reason {
@@ -483,4 +491,32 @@ img.huechange {
 /* map text styles */
 .country-origin {
   color: #BF5F52;
+}
+
+.vistited-places {
+  list-style-position: inside;
+  text-align: center;
+}
+
+.vistited-place {
+  text-align: left;
+}
+
+.places-flex-box {
+  display: flex;
+}
+
+.places-flex-box-alt {
+  display: none;
+}
+
+@media (max-width: 774px) {
+  .places-flex-box-alt {
+      display: flex;
+      margin-left: 10%;
+      margin-right: 18%;
+  }
+  .places-flex-box {
+      display: none;
+  }
 }
