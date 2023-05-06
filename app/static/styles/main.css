@@ -525,7 +525,7 @@ img.huechange {
   display: none;
 }
 
-@media (max-width: 774px) {
+@media (max-width: 784px) {
   .places-flex-box-alt {
       display: flex;
       margin-left: 10%;
