@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: '3.6.8'
 
+      - name: Update Pip
+        run: pip install --upgrade pip
+
       - name: Setup Python Virtual Environment
         run: python -m venv python3-virtualenv
 
