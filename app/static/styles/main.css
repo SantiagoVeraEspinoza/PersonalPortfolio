@@ -469,7 +469,7 @@ ul {
   min-width: 333px;
 }
 
-@media (max-width: 1368px) {
+@media (max-width: 1382px) {
   .map {
     width: 100%;
   }
