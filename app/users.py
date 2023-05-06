@@ -12,8 +12,11 @@ team_projects = {
 """ Santiago section_info """
 
 santiago_about = {
-    "contact": "santiveraespinoza@gmail.com",
-    "aboutme": "I am a future engineer in computer technologies currently studying at Tecnológico de Monterrey (ITESM, 2021 - 2025). I have been programming since 16, self-taught. My main language is C++, I can also program in Python, Matlab, R and HTML. Made some videogames on my own, as well as some physics simulators. I also have good knowledge in Office and Adobe apps."
+    "phone": "+52 477 240 7415",
+    "mail": "santiveraespinoza@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sant1ago-vera-esp1noza-152018226/",
+    "github": "https://github.com/SantiagoVeraEspinoza",
+    "aboutme": "I am a future engineer in computer technologies currently studying at Tecnológico de Monterrey (ITESM, 2021 - 2025). I have been programming since 16, self-taught. My main language is C++, I can also program in Python, Matlab, R and HTML. I have configured Linux servers and automated their development with CI/CD with a DevOps approach for MLH. Made some videogames on my own, as well as some physics simulators. I also have good knowledge in Office and Adobe apps."
 }
 
 santiago_career = {

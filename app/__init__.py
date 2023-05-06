@@ -59,7 +59,7 @@ def index():
 
 @app.route('/aboutme')
 def san_aboutme():
-    return render_template('about.html', title="Santiago's Profile", name="Santiago", contact_info=santiago_about["contact"], about_me=santiago_about["aboutme"],
+    return render_template('about.html', title="Santiago's Profile", name="Santiago", contact_phone=santiago_about["phone"], contact_mail=santiago_about["mail"], contact_linkedin=santiago_about["linkedin"], contact_github=santiago_about["github"], about_me=santiago_about["aboutme"],
                            pic_url="./static/img/SantiagoPP.png",
                            about_route='san_aboutme',
                            work_route='san_work',
