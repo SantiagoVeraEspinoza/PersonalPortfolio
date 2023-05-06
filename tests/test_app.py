@@ -20,7 +20,7 @@ class AppTestCase(unittest.TestCase):
         html = response.get_data(as_text=True)
         #assert "<title>MLH Fellow</title>" in html
         assert "<h1>Team Projects</h1>" in html        
-        assert "<h1>Santiago</h1>" in html
+        assert "<h1>Santiago Vera Espinoza</h1>" in html
 
         # TODO Add more tests relating to the home page
 
@@ -47,14 +47,14 @@ class AppTestCase(unittest.TestCase):
 
         
     #TODO Add more tests relating to the the timeline page
-        def test_timeline_page(self):
-            response = self.client.get("/timeline")
-            assert response.status_code == 200
-            html = response.get_data(as_text=True)
+    def test_timeline_page(self):
+        response = self.client.get("/timeline")
+        assert response.status_code == 200
+        html = response.get_data(as_text=True)
 
-            assert "</form>" in html
-            assert "</script>" in html
-            assert "fetch(\"http://127.0.0.1:5000/api/timeline_post\")" in html 
+        assert "</form>" in html
+        assert "</script>" in html
+        assert "<div class=\"top_post_box\">" in html 
 
 
     #error or edge cases
