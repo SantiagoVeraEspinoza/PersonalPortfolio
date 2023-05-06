@@ -13,7 +13,7 @@ from flask import render_template_string
 load_dotenv()
 
 if os.getenv("TESTING") == "true":
-    print("Running in test mode")
+    print("Running in test mode") 
     mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
 else:
     mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
