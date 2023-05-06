@@ -51,6 +51,11 @@ class AppTestCase(unittest.TestCase):
         response = self.client.get("/timeline")
         #assert response.status_code == 200
         html = response.get_data(as_text=True)
+        
+        print("Hello2")
+        print(response)
+        print(response.status.code)
+        print("Hello1")
 
         assert "</form>" in html
         assert "</script>" in html
