@@ -32,7 +32,7 @@
 
   <div class="profile">
       <div id="profile-picture" class="profile-picture">
-        <a href="{{ url_for('san_aboutme')}}">
+        <a href="{{ url_for('aboutme') }}">
           <img src="./static/img/SantiagoPP.png" />
           <h1>Santiago Vera Espinoza</h1>
         </a>
@@ -47,25 +47,24 @@
   </div>  
 
   <div class="section-header">
-    <h1>Team Projects</h1>
+    <h1>Projects</h1>
   </div>
 
-  {%for i in range(team_projects["project"] | length)%}
+  {%for i in range(projects["project_name"] | length)%}
   <div class="projects">
     <div class="project-header">
-      <h1 class="project-name">{{ team_projects["project"][i]}}</h1>
-      <h1 class="project-date">{{ team_projects["project_date"][i]}}</h1>
+      <h1 class="project-name">{{ projects["project_name"][i]}}</h1>
+      <h1 class="project-date">{{ projects["project_date"][i]}}</h1>
     </div>
-    <h2 class="project-languages">( {{ team_projects["project_lang"][i]}} )</h2>
+    <h2 class="project-languages">( {{ projects["project_lang"][i]}} )</h2>
     <ul>
-      {%for k in range(team_projects["project_desc"][i]| length)%}
-      <li>{{team_projects["project_desc"][i][k]}}</li>
+      {%for k in range(projects["project_desc"][i]| length)%}
+      <li>{{projects["project_desc"][i][k]}}</li>
       {%endfor%}
-      <li class="site-link"><a href="{{ team_projects['github_url'][i] }}"></a><b>Site: {{ team_projects["site_url"][i]
-          }}</b></a></li>
-      <li class="site-link"><b>Github: </b><a href="{{ team_projects['github_url'][i] }}">{{
-          team_projects["github_url"][i] }}</a></li>
     </ul>
+    <div class="go-to-button-container">
+      <a href="/project/{{i}}" ><button class="go-to-button">Go to project</button></a>
+    </div>
   </div>
   {%endfor%}
 

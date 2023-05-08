@@ -53,60 +53,66 @@ if __name__ == "__main__":
 
 @app.route('/')
 def index():
-    return render_template('index.html', team_projects= team_projects, url=os.getenv("URL"))
+    return render_template('index.html', projects= projects, url=os.getenv("URL"))
 
 """ Flask Routes """
-
+ 
 @app.route('/aboutme')
-def san_aboutme():
+def aboutme(): 
     return render_template('about.html', title="Santiago's Profile", name="Santiago Vera Espinoza", contact_phone=santiago_about["phone"], contact_mail=santiago_about["mail"], contact_linkedin=santiago_about["linkedin"], contact_github=santiago_about["github"], about_me=santiago_about["aboutme"],
                            pic_url="./static/img/SantiagoPP.png",
-                           about_route='san_aboutme',
-                           work_route='san_work',
-                           hobby_route='san_hobby',
-                           education_route='san_education',
-                           places_route='san_places',
+                           about_route='aboutme',
+                           work_route='work',
+                           hobby_route='hobby',
+                           education_route='education',
+                           places_route='places',
                            url=os.getenv("URL"))
 
 
 @app.route('/work')
-def san_work():
+def work():
     return render_template('work.html', title="Santiago's Profile", name="Santiago Vera Espinoza",
                            pic_url="./static/img/SantiagoPP.png",
-                           about_route='san_aboutme',
-                           work_route='san_work',
-                           hobby_route='san_hobby',
-                           education_route='san_education',
-                           places_route='san_places',
+                           about_route='aboutme',
+                           work_route='work',
+                           hobby_route='hobby',
+                           education_route='education',
+                           places_route='places',
                            career=santiago_career,  # Uses xavier_career dict to fill out details
                            user_education=santiago_education,
                            url=os.getenv("URL"))
 
 
 @app.route('/hobbies')
-def san_hobby():
+def hobby():
     return render_template('hobbies.html', title="Santiago's Profile", name="Santiago Vera Espinoza",
                            pic_url="./static/img/SantiagoPP.png",
-                           about_route='san_aboutme',
-                           work_route='san_work',
-                           hobby_route='san_hobby',
-                           education_route='san_education',
-                           places_route='san_places',
+                           about_route='aboutme',
+                           work_route='work',
+                           hobby_route='hobby',
+                           education_route='education',
+                           places_route='places',
                            user_hobbies=santiago_hobby,
                            url=os.getenv("URL"))
 
 
 @app.route('/places')
-def san_places():
+def places():
     return render_template('places.html', title="Santiago's Profile", name="Santiago Vera Espinoza",
                            pic_url="./static/img/SantiagoPP.png",
-                           about_route='san_aboutme',
-                           work_route='san_work',
-                           hobby_route='san_hobby',
-                           education_route='san_education',
-                           places_route='san_places',
+                           about_route='aboutme',
+                           work_route='work',
+                           hobby_route='hobby',
+                           education_route='education',
+                           places_route='places',
                            mapper=santiago_mapper,
                            #    mapperjson=json.dumps(xavier_mapper),
+                           url=os.getenv("URL"))
+
+@app.route('/project/<int:id>')
+def project(id):
+    return render_template('project.html',
+                           title=projects["project_name"][id],
                            url=os.getenv("URL"))
 
 @ app.route('/timeline')
