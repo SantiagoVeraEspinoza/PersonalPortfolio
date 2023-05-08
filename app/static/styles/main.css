@@ -500,6 +500,18 @@ ul {
 }
 
 /* CSS Styles for aboutme */
+.aboutme-contact-flex {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-text {
+  word-wrap: break-word; 
+  hyphens: auto;
+}
+
 .aboutme p {
   font-size: 20px;
   text-align: justify;
