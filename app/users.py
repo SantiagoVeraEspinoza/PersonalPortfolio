@@ -7,7 +7,7 @@ projects = {
          "Achieved a performance score of up to 93 points on Google Lighthouse.",
          'Assured 96 points on accessibility with Google Lighthouse.',
          ],
-     1: ['Used a tile system and created collisions from scratch in the console (no Unity or similar).'
+     1: ['Used a tile system and created collisions from scratch in the console (no Unity or similar).',
          'Efficient with up to 60 consistent frames per second.',
          'All rendering and sprite animations were done manually based on the 16x16 tile system.',
          ],
@@ -18,6 +18,11 @@ projects = {
     "soft-skills" : ['Teamwork, Time Management, Communication',
                      'Perseverance, Self Learning, Ambition, Logical Thinking, Passion, Emotional Intelligence'
                      ],
+    "project_videos": {
+     0:  ['kueskidemo.mp4',
+          'mariobrosdemo.mp4',
+         ],
+    },
 }
 
 """ Santiago section_info """

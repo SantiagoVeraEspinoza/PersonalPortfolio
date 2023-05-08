@@ -30,7 +30,15 @@
         </div>
     </header>
     
-    <h1 class="divisor-text">{{title}}</p>
+    <h1 class="divisor-text">{{title}}</h1>
+    <div>
+        {%for i in range(videos | length)%}
+        <video width="320" height="240" controls>
+            <source src="../static/vid/{{videos[i]}}" type="video/mp4">
+            Your browser does not support the video format <code>video</code>.
+        </video>
+        {%endfor%}
+    </div>
 </body>
 
 </html>

@@ -113,6 +113,7 @@ def places():
 def project(id):
     return render_template('project.html',
                            title=projects["project_name"][id],
+                           videos=projects["project_videos"][id],
                            url=os.getenv("URL"))
 
 @ app.route('/timeline')
