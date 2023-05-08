@@ -19,10 +19,10 @@ projects = {
                      'Perseverance, Self Learning, Ambition, Logical Thinking, Passion, Emotional Intelligence'
                      ],
     "project_videos": {
-     0:  ['kueskidemo.mp4',
-          'mariobrosdemo.mp4',
+     0:  ['https://www.youtube.com/embed/tgbNymZ7vqY',
+          'https://www.youtube.com/embed/imb6138ESDE',
          ],
-     1:  ['mariobrosdemo.mp4',
+     1:  ['https://www.youtube.com/embed/imb6138ESDE',
          ],
     },
 }
