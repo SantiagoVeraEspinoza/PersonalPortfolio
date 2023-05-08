@@ -22,6 +22,8 @@ projects = {
      0:  ['kueskidemo.mp4',
           'mariobrosdemo.mp4',
          ],
+     1:  ['mariobrosdemo.mp4',
+         ],
     },
 }
 
