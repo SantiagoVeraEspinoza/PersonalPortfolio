@@ -1,7 +1,10 @@
 projects = {
     "project_name" : ['Kueski R&D', 'Replica of Mario Bros'],
-    "project-client": ['Tecnológico de Monterrey & Kueski', 'Self Project'],
+    "project_client": ['Tecnológico de Monterrey & Kueski', 'Self Project'],
     "project_date" : ['Feb 2023 - May 2023', 'Aug 2020 - Sep 2020'],
+    "project_intro" : ['In the first half of 2023, the Tecnológico de Monterrey and Kueski collaborated on a project to develop a website that allows users of an online loan service to manage their ARCO (Access, Rectification, Cancellation, and Opposition) rights. The website was designed to provide users with an easy and secure way to manage their personal information and privacy preferences',
+                       'Between August and September 2020, I embarked on a project to develop a tile-based game system from scratch, without relying on pre-existing game engines such as Unity. This involved creating a collision detection system, implementing efficient rendering of sprites and animations (all of which were custom), and optimizing the game to achieve up to 60 consistent frames per second. Everything with a header only game engine that literally just gave me the ability to display pixels on screen and manage frames',
+                       ],
     "project_desc": {
      0: ['Website to manage the ARCO rights of a user from an online loan service.',
          "Achieved a performance score of up to 93 points on Google Lighthouse.",
@@ -12,18 +15,29 @@ projects = {
          'All rendering and sprite animations were done manually based on the 16x16 tile system.',
          ],
     },
-    "technical-skills" : ['JavaScript, Agile, Express, NodeJs, Vercel, MySQL, API Design',
+    "technical_skills" : ['JavaScript, Agile, Express, NodeJs, Vercel, MySQL, API Design',
                           'C++, Mathematics, Physics'
                           ],
-    "soft-skills" : ['Teamwork, Time Management, Communication',
+    "soft_skills" : ['Teamwork, Time Management, Communication',
                      'Perseverance, Self Learning, Ambition, Logical Thinking, Passion, Emotional Intelligence'
                      ],
     "project_videos": {
-     0:  ['https://www.youtube.com/embed/tgbNymZ7vqY',
+     0:  ['https://www.youtube.com/embed/Qk54EsR1R2o',
           'https://www.youtube.com/embed/imb6138ESDE',
          ],
-     1:  ['https://www.youtube.com/embed/imb6138ESDE',
-          'https://www.youtube.com/embed/YWwp9ZHQxF4',
+     1:  ['https://www.youtube.com/embed/SSVyFhyraDo',
+          'https://www.youtube.com/embed/-87Ue6nh_dk',
+         ],
+    },
+    "project_gallery": {
+     0:  ['kueski1.png',
+          'kueski2.png',
+          'kueski3.png',
+          'kueski4.png',
+          'kueski5.png',
+         ],
+     1:  ['mario1.png',
+          'mario2.png',
          ],
     },
 }

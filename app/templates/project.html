@@ -31,10 +31,53 @@
     </header>
     
     <h1 class="divisor-text">{{title}}</h1>
-    <div>
-        {%for i in range(videos | length)%}
-        <iframe width="560" height="315" src="{{videos[i]}}" title="Video de muestra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        {%endfor%}
+    <div class="project-desc-flex">
+        <div class="project-desc-text">
+            <div class="header-desc-flex">
+                <div class="title-container">
+                    <h1><b>{{client}}</b></p>
+                </div>
+                <div class="desc-date">
+                    <h2><b>{{date}}</b></h2>
+                </div>
+            </div>
+            <div class="project-intro">
+                <p>{{introduction}}.</p>
+            </div>
+            <div>
+                <p><b>Main points from the project:</b></p>
+                <ul>
+                    {%for i in range(description | length)%}
+                    <li>{{description[i]}}</li>
+                    {%endfor%}
+                </ul>
+            </div>
+            <div>
+                <p><b>Technical Skills: </b>{{technical_skills}}.</p>
+            </div>
+            <div>
+                <p><b>Soft Skills: </b>{{soft_skills}}.</p>
+            </div>
+        </div>
+        <div class="project-videos-flexbox">
+            {%for i in range(videos | length)%}
+            <div class="video">
+            <iframe width="320" height="200" src="{{videos[i]}}" title="Video de muestra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+    <div class="gallery-flex">
+        <div class="gallery-title">
+            <h1>Photo gallery</h1>
+        </div>
+        <div class="photos-container">
+            {%for i in range(photos | length)%}
+            <div class="photo">
+                <img src="../static/img/projects/{{photos[i]}}" alt="Descripción de la imagen">
+            </div>
+            {%endfor%}
+        </div>
     </div>
 </body>
 
