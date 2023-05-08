@@ -192,6 +192,7 @@ a:visited {
   height: 100px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .box:hover {
