@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
 @app.route('/')
 def index():
-    return render_template('index.html', projects= projects, url=os.getenv("URL"))
+    return render_template('index.html', title="Main Page", projects= projects, url=os.getenv("URL"))
 
 """ Flask Routes """
  
