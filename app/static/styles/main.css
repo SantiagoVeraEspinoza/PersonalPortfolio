@@ -399,6 +399,22 @@ ul {
   max-width: 400px;
 }
 
+.hobby-resp {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.hobby-resp img {
+  align-self: center;
+  max-height: 100%;
+  max-width: 80%;
+}
+
 .hobby-text {
   margin-right: 5%;
 }
@@ -414,6 +430,25 @@ ul {
 
 .hobby-text-p {
   text-align: justify;
+}
+
+/* Hobbies if */
+
+.hobbies {
+  display: block;
+}
+
+.hobbies-responsive {
+  display: none;
+}
+
+@media (max-width: 784px) {
+  .hobbies-responsive {
+      display: flex;
+  }
+  .hobbies {
+      display: none;
+  }
 }
 
 /* CSS Styles for the Individual Page Nav-Bars */

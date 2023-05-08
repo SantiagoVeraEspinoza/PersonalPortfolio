@@ -48,31 +48,44 @@
     </ul>
   </div>
 
-  <div class="personal-hobbies">
-    {%for i in range(user_hobbies["n_hobbies"])%}
-    {%if i%2==0%}
-    <div class="hobby-side-r">
-      <div class="hobby-text">
-        <h1 class="hobby-text-h1">{{user_hobbies["hobbies"][i]}}</h1>
-        <p class="hobby-text-p">{{user_hobbies["description"][i]}}</p>
+  <div class="hobbies">
+    <div class="personal-hobbies">
+      {%for i in range(user_hobbies["n_hobbies"])%}
+      {%if i%2==0%}
+      <div class="hobby-side-r">
+        <div class="hobby-text">
+          <h1 class="hobby-text-h1">{{user_hobbies["hobbies"][i]}}</h1>
+          <p class="hobby-text-p">{{user_hobbies["description"][i]}}</p>
+        </div>
+        <img src="{{user_hobbies['url'][i]}}" alt="{{user_hobbies['credit'][i]}}"/>
       </div>
-      <img src="{{user_hobbies['url'][i]}}" alt="{{user_hobbies['credit'][i]}}" class="hobby-img" />
-    </div>
-    {%else%}
-    <div class="hobby-side-r">
-      <img src="{{user_hobbies['url'][i]}}" alt="{{user_hobbies['credit'][i]}}" class="hobby-img" />
-      <div class="hobby-text-alt">
-        <h1 class="hobby-text-h1">{{user_hobbies["hobbies"][i]}}</h1>
-        <p class="hobby-text-p">{{user_hobbies["description"][i]}}</p>
-      </div>
+      {%else%}
+      <div class="hobby-side-r">
+        <img src="{{user_hobbies['url'][i]}}" alt="{{user_hobbies['credit'][i]}}"/>
+        <div class="hobby-text-alt">
+          <h1 class="hobby-text-h1">{{user_hobbies["hobbies"][i]}}</h1>
+          <p class="hobby-text-p">{{user_hobbies["description"][i]}}</p>
+        </div>
 
+      </div>
+      {%endif%}
+      {%endfor%}
     </div>
-    {%endif%}
-    {%endfor%}
   </div>
 
-
-
+  <div class="hobbies-responsive">
+    <div class="personal-hobbies">
+      {%for i in range(user_hobbies["n_hobbies"])%}
+      <div class="hobby-resp">
+        <div class="hobby-text">
+          <h1 class="hobby-text-h1">{{user_hobbies["hobbies"][i]}}</h1>
+          <p class="hobby-text-p">{{user_hobbies["description"][i]}}</p>
+        </div>
+        <img src="{{user_hobbies['url'][i]}}" alt="{{user_hobbies['credit'][i]}}"/>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
 
 </body>
 
