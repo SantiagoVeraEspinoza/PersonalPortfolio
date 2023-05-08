@@ -189,6 +189,7 @@ a:visited {
 
   border-radius: 10px;
   width: 340px;
+  height: 100px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -201,8 +202,18 @@ body.no-hover .box:not(.large):hover {
   transform: none;
 }
 
-.box.large {
-  transform: scale(1.5);
+@media screen and (max-width: 600px) {
+  .box.large {
+    height: 150px; /* Ajusta la altura como desees */
+    transform: none;
+    transition: height 0.2s ease-in-out;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .box.large {
+    transform: scale(1.5);
+  }
 }
 
 .top_post_box{
