@@ -1,10 +1,23 @@
 projects = {
-    "project_name" : ['Team Portfolio Site',],
-    "project_lang" : ['Flask, JS, Jinja, Python, Leaflet, MySQL, Docker, GitHub Actions, NGINX',],
-    "project_date" : ['Jan 26/2023 - Feb 06/2023'],
+    "project_name" : ['Kueski R&D', 'Replica of Mario Bros'],
+    "project-client": ['Tecnológico de Monterrey & Kueski', 'Self Project'],
+    "project_date" : ['Feb 2023 - May 2023', 'Aug 2020 - Sep 2020'],
     "project_desc": {
-     0: ['Created a Portfolio Website as a team of 4, using Flask for the backend',"Javascript was used to add an interactive map using the Leaflet library to showcase members travel experience", 'Project was developed in an agile style, with members completing tasks using github issues to track progress and commits', 'Created a server which stores the project for public access', 'Later implementations using MySQL, Docker, GitHub Actions and NGINX were made',],
+     0: ['Website to manage the ARCO rights of a user from an online loan service.',
+         "Achieved a performance score of up to 93 points on Google Lighthouse.",
+         'Assured 96 points on accessibility with Google Lighthouse.',
+         ],
+     1: ['Used a tile system and created collisions from scratch in the console (no Unity or similar).'
+         'Efficient with up to 60 consistent frames per second.',
+         'All rendering and sprite animations were done manually based on the 16x16 tile system.',
+         ],
     },
+    "technical-skills" : ['JavaScript, Agile, Express, NodeJs, Vercel, MySQL, API Design',
+                          'C++, Mathematics, Physics'
+                          ],
+    "soft-skills" : ['Teamwork, Time Management, Communication',
+                     'Perseverance, Self Learning, Ambition, Logical Thinking, Passion, Emotional Intelligence'
+                     ],
 }
 
 """ Santiago section_info """
