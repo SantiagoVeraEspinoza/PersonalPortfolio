@@ -30,13 +30,32 @@
     </div>
   </header>
 
-  <div class="section-header">
+  <div class="section-header" style="margin-top: 10px;">
     <h1>Blog</h1>
   </div>
 
-  {%for i in range(titles | length)%}
-  <p>hello</p>
-  {%endfor%}
+  <div class="blogs">
+    {%for i in range(titles | length)%}
+    <div class="blog-present-flex">
+        <div class="blog-data-flex">
+            <div class="blog-title-box">
+                <a href="/blog/{{links[i]}}"><h1>{{titles[i]}}</h1></a>
+            </div>
+            <div class="blog-info-flex">
+                <div class="blog-author-info">
+                    <p>By <a href="/aboutme"><b>{{ authors[i] }}</b></a></p>
+                </div>
+                <div class="blog-dates-and-time">
+                    <p>{{dates[i]}} - {{read_times[i]}} read</p>
+                </div>
+            </div>
+        </div>
+        <div class="blog-present-image">
+            <a href="/blog/{{links[i]}}"><img src="./../static/img/blogs/{{images[i]}}"></a>
+        </div>
+    </div>
+    {%endfor%}
+  </div>
 
 </body>
 

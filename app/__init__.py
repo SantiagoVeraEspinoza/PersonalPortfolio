@@ -131,6 +131,8 @@ def blog():
                            dates=blogs["blog_dates"],
                            authors=blogs["blog_authors"],
                            read_times=blogs["blog_read_times"],
+                           images=blogs["image_names"],
+                           links=blogs["links"],
                            url=os.getenv("URL"))
 
 @app.route('/blog/<name>')

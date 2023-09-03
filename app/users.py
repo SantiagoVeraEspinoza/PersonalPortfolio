@@ -44,7 +44,7 @@ projects = {
 
 blogs = {
     "blog_titles": [
-        "A Short History of Testing of Software Systems"
+        "A Short History of Testing of Software Systems",
     ],
     "blog_dates": [
         "02/09/2023"
@@ -54,6 +54,12 @@ blogs = {
     ],
     "blog_read_times": [
         "3 mins"
+    ],
+    "image_names": [
+        "testing_history.jpg"
+    ],
+    "links": [
+        "short_history_testing"
     ]
 }
 
