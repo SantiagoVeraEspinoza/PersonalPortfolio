@@ -42,6 +42,21 @@ projects = {
     },
 }
 
+blogs = {
+    "blog_titles": [
+        "A Short History of Testing of Software Systems"
+    ],
+    "blog_dates": [
+        "02/09/2023"
+    ],
+    "blog_authors": [
+        "Santiago Vera Espinoza"
+    ],
+    "blog_read_times": [
+        "3 mins"
+    ]
+}
+
 """ Santiago section_info """
 
 santiago_about = {

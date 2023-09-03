@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta property="og:title" content="Personal Portfolio" />
+  <meta property="og:description" content="My Personal Portfolio" />
+  <meta property="og:url" content="{{ url }}" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+
+  <link lang="sass" rel="stylesheet" href="../static/styles/main.css" />
+  <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon" />
+  <title>A Short History of Testing of Software Systems</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <div class="nav-content">
+            <a href="/">
+            <div class="nav-logo">
+                <img src="../static/img/logo.png" />
+            </div>
+            </a>
+        </div>
+    </header>
+
+    <h1 class="blog-section-title">A Short History of Testing of Software Systems</h1>
+    <hr>
+    <div class="blog-content-flex-box">
+        <div class="blog-info-flex-box">
+            <div class="autor-profile-picture">
+                <a href="/aboutme" target="_blank"><img src="../static/img/SantiagoPP.png"></a>
+            </div>
+            <div class="info-data-subflex">
+                <div class="blog-author-cell">
+                    <a href="/aboutme" target="_blank">Santiago Vera Espinoza</a>
+                </div>
+                <div class="blog-date-cell">
+                    3 mins read - September 2, 2023
+                </div>
+            </div>
+            <div class="back-button">
+                <a href="/blog"><img src="{{ image_folder }}../back.png" alt="Go back"></a>
+            </div>
+        </div>
+        <div class="blog-body">
+            <p>
+                One of the things I come to think about from time to time since I decided that I 
+                wanted to become a software engineer is a video that was shown to me during the first 
+                semesters of my career. The video talked about the huge responsibilities that we have as 
+                developers: our code is used everyday and a lot of people depend on the availability of 
+                what we do.
+            </p>
+            <p>
+                For example, I work as a software engineer intern in Oracle, more specifically in the 
+                devops area of the database team. I, in fact, develop test systems for the big database 
+                servers that hundreds of companies use on a daily basis. For example, banks, assurance 
+                companies, research organizations (like CERN), video game companies (Activision), the 
+                famous Oracle RedBull racing team and the US army. This info is public by the way, you 
+                can check it 
+                <a href="https://www.appsruntheworld.com/customers-database/products/view/oracle-exadata/name/asc/10/2" target="_blank">here</a>
+                , <a href="https://6sense.com/tech/enterprise-data-storage/oracle-exadata-market-share" target="_blank">here</a> 
+                and <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwieiZHlkI2BAxUXKEQIHYdIAZ8QFnoECAcQAQ&url=https%3A%2F%2Fwww.oracle.com%2Fcustomers%2F&usg=AOvVaw0AJqlTVjFgHP4DJZWIHgEM&opi=89978449" target="_blank">here</a> 
+                (I swear I'm not breaking any privacy agreement here, 
+                please don’t kill me Oracle). 
+            </p>
+            <p>
+                Knowing this you can imagine just how important it is for systems to be highly available 
+                and tested so users can use (jajaja, funny wording there) the services provided and these 
+                services tend to be vital. Imagine if a known bug that could make the bank system of a big 
+                company was not detected by Oracle’s Exachk system and made the server crash, catastrophe! 
+                And believe me these are common issues.
+            </p>
+            <p>
+                It is really important to test systems so we don’t get these types of errors. We have a 
+                great responsibility in our hands. So in this case I’m going to honor this area of software 
+                development by making a quick chronology of testing in software systems, get ready!
+            </p>
+            <p>
+                You could resume it with this little image by Jain (2022):
+            </p>
+            <img src="{{ image_folder }}/Softwaretesting.png" width="900px">
+            <p>
+                So let’s go through it right away:
+            </p>
+            <ul>
+                <li><b>1950</b>: Tom Kilburn creates the first software for the University of Manchester in England. It performed mathematical calculations using machine code instructions.</li>
+                <li><b>Again in 1950</b>: The Turing test was introduced this year which checks the intelligence of machines.</li>
+                <li><b>1957</b>: Debugging started being considered as a software testing method. This was made via news articles and the experience of various developers.</li>
+                <li><b>1958</b>: Gerald M. Weinberg forms the first team specifically focused on testing systems.</li>
+                <li><b>1961</b>: A specific chapter on software testing was introduced in the book “Computer Programming Fundamentals” by Gerald Weinberg & Herbert Leeds.</li>
+                <li><b>1968</b>: Software testing was mentioned in a report by NATO.</li>
+                <li><b>1970</b>: Winston Royce described a waterfall model in the paper Managing the Development of Large Software Systems.</li>
+                <li><b>1971</b>: Richard Lipton proposed the concept of mutation testing. Mutation Testing is a type of software testing in which certain statements of the source code are changed/mutated to check if the test cases are able to find errors in the source code.</li>
+                <li><b>1973</b>: <a href="https://www.geeksforgeeks.org/cause-effect-graphing-in-software-engineering/" target="_blank">Cause Effect Graphing-based technique</a> was introduced.</li>
+                <li><b>1978</b>: <a href="https://www.geeksforgeeks.org/software-testing-functional-testing/" target="_blank">Functional testing</a> was introduced by William Howden.</li>
+                <li><b>1979</b>: Destruction oriented era. In this era, the focus was to break the code and find some errors. That’s why it is called like that!</li>
+                <li><b>1983</b>: The first version of the IEEE 829 Standard for Software Test Documentation was published.</li>
+                <li><b>1985</b>:  Autotester, the first commercial test tool for the PC is released.</li>
+                <li><b>1986</b>: <a href="https://www.sealights.io/software-quality/software-quality-engineering-a-beginners-handbook/#:~:text=Software%20quality%20engineering%20(SQE)%20is,teams%20produce%20high-quality%20software." target="_blank">Software quality engineering</a> was founded by David Gelperin and William Hetzel. </li>
+                <li><b>1988-2000</b>: Testing had reached a qualitatively new level, which led to the further development of methodologies, and powerful tools for managing the testing process.</li>
+                <li><b>2004</b>: Selenium, a web application testing tool was developed.</li>
+                <li><b>2005</b>: SoapUI was released in the month of September and it became quite popular.</li>
+                <li><b>2008</b>: Software testing company Altom is founded.</li>
+                <li><b>2016</b>: <a href="https://docs.pytest.org/en/7.1.x/history.html#:~:text=In%20September%202004%2C%20the%20py,test%20." target="_blank">Pytest</a> gets formally released.</li>
+                <li><b>Present</b>: Artificial intelligence is also being used for testing software based on the behavior of the end users. Now testers perform different types of testing like Unit testing, Integration testing, Acceptance testing, Performance testing, etc.</li>
+            </ul>
+            <p>
+                This sure was a big trip indeed. We should stop by sometimes and think about everything 
+                that has brought us to the point we are now. How such an important thing as testing was 
+                evoluted until this day.
+            </p>
+            <p>
+                To finish up I will leave this video in case you want to know a different perspective on 
+                how the evolution of software testing was. Try to give it a shoot!
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IkzSQvCejOA?si=xjC-FVbGm3oJ1sVB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h1>References</h1>
+            <p class="body-references">Jain, S. (2020, March 28). Cause Effect Graphing in Software Engineering. GeeksforGeeks. Retrieved September 1, 2023, from https://www.geeksforgeeks.org/cause-effect-graphing-in-software-engineering/</p>
+            <p class="body-references">Jain, S. (2022, November 17). History of Software Testing. GeeksforGeeks. Retrieved September 1, 2023, from https://www.geeksforgeeks.org/history-of-software-testing/</p>
+            <p class="body-references">Jain, S. (2023, May 24). Software Testing - Functional Testing. GeeksforGeeks. Retrieved September 1, 2023, from https://www.geeksforgeeks.org/software-testing-functional-testing/</p>
+            <p class="body-references">Sealights. (2023). Software Quality Engineering: A Beginner's Handbook. Sealights. Retrieved September 1, 2023, from https://www.sealights.io/software-quality/software-quality-engineering-a-beginners-handbook/</p>
+        </div>
+    </div>
+</body>
+
+</html>

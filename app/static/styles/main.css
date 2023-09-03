@@ -158,6 +158,8 @@ a:visited {
   font-size: 40px;
   text-align: center;
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Div timeline header */
@@ -415,6 +417,104 @@ ul {
   margin-right: 10px;
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.blog-section-title {
+  font-size: 50px;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  text-align: center;
+}
+
+.blog-content-flex-box {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.blog-info-flex-box {
+  display: flex;
+  flex-direction: row;
+
+  flex-grow: 1;
+}
+
+.autor-profile-picture {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.autor-profile-picture img {
+  width: 100%; /* Make the image fill the container */
+  height: 100%; /* Same as width to maintain a circular shape */
+  object-fit: cover; /* Maintain the image's aspect ratio and cover the circular container */
+}
+
+.autor-profile-picture:hover img {
+  filter: brightness(80%);
+}
+
+.info-data-subflex {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 10px;
+}
+
+.blog-author-cell {
+  flex-grow: 1;
+
+  text-align: left;
+  vertical-align: top;
+}
+
+.blog-author-cell a {
+  color: #BF7350;
+  text-decoration: none;
+}
+
+.blog-author-cell:hover {
+  text-decoration: underline;
+  text-decoration-color: #BF7350;
+  cursor: pointer;
+}
+
+.blog-date-cell {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  text-align: left;
+  justify-content: flex-end;
+  bottom: 0;
+
+  font-size: 12px;
+}
+
+.back-button {
+  margin-left: auto;
+
+  justify-content: center;
+}
+
+.back-button img {
+  width: 40px;
+}
+
+.blog-body p {
+  text-align: justify;
+}
+
+.blog-body img {
+  max-width: 100%;
+}
+
+.body-references {
+  text-indent: 1em;
 }
 
 .header-desc-flex {

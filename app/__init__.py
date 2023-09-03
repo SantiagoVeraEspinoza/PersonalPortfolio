@@ -123,6 +123,22 @@ def project(id):
                            photos=projects["project_gallery"][id],
                            url=os.getenv("URL"))
 
+@app.route('/blog')
+def blog():
+    return render_template(f'blog.html',
+                           title="Blog",
+                           titles=blogs["blog_titles"],
+                           dates=blogs["blog_dates"],
+                           authors=blogs["blog_authors"],
+                           read_times=blogs["blog_read_times"],
+                           url=os.getenv("URL"))
+
+@app.route('/blog/<name>')
+def blog_post(name):
+    return render_template(f'./blogs/{name}.html',
+                           image_folder=f"./../../static/img/blogs/{name}/",
+                           url=os.getenv("URL"))
+
 @ app.route('/timeline')
 def timeline():
     response = requests.get('http://127.0.0.1:5000/api/timeline_post')
