@@ -2,7 +2,7 @@
 
 WD=$PWD
 
-cd /root/PersonalPortfolio
+cd /root/Repos/PersonalPortfolio
 
 git fetch
 git reset origin/main --hard
