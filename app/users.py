@@ -74,7 +74,7 @@ santiago_about = {
 }
 
 santiago_education = {
-    "education_count": 1,
+    "education_count": 2,
     "university": ["Tecnológico de Monterrey", "University of Texas at Austin"],
     "degree": ["BS. in Computer Science and Technology", "BS. in Computer Science"],
     "dates": ["Aug 2021 - Jun 2025 (Expected)", "Aug 2024 - Dec 2024"],
