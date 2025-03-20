@@ -75,14 +75,16 @@ santiago_about = {
 
 santiago_education = {
     "education_count": 1,
-    "university": ["Tecnológico de Monterrey"],
-    "degree": ["BS. in Computer Sciences and Technology"],
-    "dates": ["Aug 2021 - Jun 2025 (Expected)"],
+    "university": ["Tecnológico de Monterrey", "University of Texas at Austin"],
+    "degree": ["BS. in Computer Science and Technology", "BS. in Computer Science"],
+    "dates": ["Aug 2021 - Jun 2025 (Expected)", "Aug 2024 - Dec 2024"],
     "descriptions": {
-        0: ["Current average grade: 96.26/100.00"],
+        0: ["Current average grade: 97.01/100.00"],
+        1: ["Total average grade: 95.67/100.00"],
     },
     "courses": {
-        0: ["Data structures and Fundamental Algorithms", "Software Construction and Decision Making", "Analysis of Software Requirements", "Object-Oriented Programming", "Modeling of Minimum Systems and Computational Architectures"],
+        0: ["Integration of Computer Security in Networks and Software Systems", "Analysis and Design of Advanced Algorithms", "Modeling of Multi-Agent Systems with Computer Graphics", "Object-Oriented Programming", "Modeling of Minimum Systems and Computational Architectures"],
+        1: ["Artificial Intelligence", "Game Programming Paradigms", "Introduction to Microeconomics", "Introduction to Macroeconomics."],
     }
 }
 
